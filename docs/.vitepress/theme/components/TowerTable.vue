@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import tower from "../../data/tower-defense.json";
 
 interface TowerRow {
@@ -21,6 +21,9 @@ interface TowerRow {
 const rows = tower as TowerRow[];
 const keyword = ref("");
 const limit = ref(40);
+onMounted(() => {
+  keyword.value = new URLSearchParams(window.location.search).get("floor") ?? "";
+});
 
 const EL: Record<string, string> = { 金: "#d4af37", 木: "#5cae7d", 水: "#5b9bd5", 火: "#e0664f", 土: "#c4875a" };
 
@@ -50,8 +53,9 @@ function line(get: (r: TowerRow) => number, max: number): string {
     .map((r, i) => `${(i / (rows.length - 1)) * 640},${145 - (get(r) / max) * 135}`)
     .join(" ");
 }
-const defLine = computed(() => line((r) => Number(r.defHuman) || 0, maxDef.value));
-const atkLine = computed(() => line((r) => Number(r.maxAtk) || 0, maxDef.value * 0.5));
+const scale = Math.max(1, maxDef.value, ...rows.map((row) => Number(row.maxAtk) || 0));
+const defLine = computed(() => line((r) => Number(r.defHuman) || 0, scale));
+const atkLine = computed(() => line((r) => Number(r.maxAtk) || 0, scale));
 </script>
 
 <template>
@@ -73,7 +77,7 @@ const atkLine = computed(() => line((r) => Number(r.maxAtk) || 0, maxDef.value *
 
     <div class="pc-toolbar">
       <p class="item-count" style="margin: 0">共 {{ rows.length }} 关 · 支持按关数 / 怪物名 / 属性筛选</p>
-      <input v-model="keyword" class="item-search pc-search" type="search" placeholder="如：10 / 厚皮鳄 / 火" />
+      <input v-model="keyword" class="item-search pc-search" type="search" placeholder="如：10 / 厚皮鳄 / 火" aria-label="筛选天关关数、怪物或属性" />
     </div>
 
     <table>

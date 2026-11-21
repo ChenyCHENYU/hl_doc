@@ -3,8 +3,12 @@ import { computed } from "vue";
 import flowsData from "../../data/quest-flows.json";
 import codex from "../../data/pet-codex.json";
 import { EVO_ELEMENTS } from "../evolution";
+import { assetUrl } from "../assets";
 
 const props = defineProps<{ flow: string }>();
+function hideBrokenImage(event: Event) {
+  if (event.target instanceof HTMLImageElement) event.target.hidden = true;
+}
 
 interface Step {
   n: number;
@@ -29,7 +33,7 @@ for (const p of codex as any[]) {
     id: p.id,
     name: p.name,
     element: p.element,
-    img: p.image?.file ?? null,
+    img: p.image?.ossKey ? assetUrl(p.image.ossKey) : null,
     color: EL[p.element]?.color ?? "#b8860b",
   });
 }
@@ -60,7 +64,7 @@ function richText(text: string): string {
     if (!html.includes(nm)) continue;
     const p = petByName.get(nm)!;
     const img = p.img
-      ? `<img src="/hl-assets/hl/pets/${p.img}" alt="${nm}" loading="lazy">`
+      ? `<img src="${p.img}" alt="${nm}" loading="lazy">`
       : `<i style="background:${p.color}">${EL[p.element]?.label ?? "宠"}</i>`;
     html = html.replace(
       new RegExp(nm, "g"),
@@ -90,7 +94,7 @@ const stats = computed(() => {
 </script>
 
 <template>
-  <div v-if="flow && stats" class="qf">
+  <div v-if="flow && stats" class="qf" @error.capture="hideBrokenImage">
     <!-- ── 总况 ── -->
     <section class="qf-overview">
       <div class="qf-stat">
@@ -111,7 +115,7 @@ const stats = computed(() => {
       </div>
       <div v-if="stats.pets.length" class="qf-pets">
         <a v-for="p in stats.pets" :key="p.name" :href="`/pets/${p.id}`" class="qf-pet" :title="`查看 ${p.name} 图鉴`">
-          <img v-if="p.img" :src="`/hl-assets/hl/pets/${p.img}`" :alt="p.name" loading="lazy" />
+          <img v-if="p.img" :src="p.img" :alt="p.name" loading="lazy" />
           <i v-else :style="{ background: p.color }">{{ EL[p.element]?.label ?? "宠" }}</i>
           <b>{{ p.name }}</b>
         </a>

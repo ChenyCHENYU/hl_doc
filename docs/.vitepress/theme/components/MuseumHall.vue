@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { assetUrl } from "../assets";
 // 历史陈列馆 —— 32 位时代的幻灵工具生态
 // 仅作史料陈列：不提供下载、不含操作指引。
 
@@ -143,7 +144,10 @@ const TIMELINE: { year: string; text: string }[] = [
 ];
 
 function img(file: string): string {
-  return `/hl-assets/hl/misc/${file}`;
+  return assetUrl(`hl/misc/${file}`);
+}
+function hideBrokenImage(event: Event) {
+  if (event.target instanceof HTMLImageElement) event.target.hidden = true;
 }
 </script>
 
@@ -191,15 +195,15 @@ function img(file: string): string {
       <p class="mu-sec-intro">来自优化资源包的两张说明图与一份官方机制图，正式环境经 OSS 分发。</p>
       <div class="mu-figures">
         <figure class="mu-fig">
-          <img :src="img('xiaojingling-intro.png')" alt="小精灵辅助功能介绍" />
+          <img :src="img('xiaojingling-intro.png')" alt="小精灵辅助功能介绍" loading="lazy" @error="hideBrokenImage" />
           <figcaption>小精灵功能介绍（业务传单）</figcaption>
         </figure>
         <figure class="mu-fig">
-          <img :src="img('business-intro.png')" alt="工具业务介绍" />
+          <img :src="img('business-intro.png')" alt="工具业务介绍" loading="lazy" @error="hideBrokenImage" />
           <figcaption>定制服务业务介绍</figcaption>
         </figure>
         <figure class="mu-fig">
-          <img :src="img('ban-ip-reason.png')" alt="封IP的原因" />
+          <img :src="img('ban-ip-reason.png')" alt="封IP的原因" loading="lazy" @error="hideBrokenImage" />
           <figcaption>官方封禁机制说明（封 IP 的原因）</figcaption>
         </figure>
       </div>

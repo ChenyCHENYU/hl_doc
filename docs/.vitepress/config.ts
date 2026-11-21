@@ -1,13 +1,16 @@
 import { defineConfig } from "vitepress";
 import type { Plugin } from "vite";
 import { readFileSync, statSync } from "node:fs";
-import { resolve, extname } from "node:path";
-import helpSidebar from "./data/help-sidebar.json";
-import librarySidebar from "./data/library-sidebar.json";
-
-const helpSidebarGroups = helpSidebar as { text: string; collapsed: boolean; items: { text: string; link: string }[] }[];
-
-const ASSETS_BASE = resolve(__dirname, "../../assets");
+import { resolve, extname, relative, isAbsolute } from "node:path";
+import { fileURLToPath } from "node:url";
+const CONFIG_DIR = fileURLToPath(new URL(".", import.meta.url));
+const ASSETS_BASE = resolve(CONFIG_DIR, "../../assets");
+type SidebarGroup = { text: string; collapsed: boolean; items: { text: string; link: string }[] };
+function readData(name: string) {
+  return JSON.parse(readFileSync(resolve(CONFIG_DIR, "data", name), "utf-8"));
+}
+const helpSidebarGroups: SidebarGroup[] = readData("help-sidebar.json");
+const librarySidebar: SidebarGroup[] = readData("library-sidebar.json");
 
 const MIME: Record<string, string> = {
   ".png": "image/png",
@@ -21,9 +24,16 @@ const MIME: Record<string, string> = {
 function hlLocalAssets(): Plugin {
   const handler = (req: any, res: any, next: () => void) => {
     if (!req.url || !req.url.startsWith("/hl-assets/")) return next();
-    const rel = decodeURIComponent(req.url.slice("/hl-assets/".length).split("?")[0]);
+    let rel: string;
+    try {
+      rel = decodeURIComponent(req.url.slice("/hl-assets/".length).split("?")[0]);
+    } catch {
+      res.statusCode = 400;
+      return res.end();
+    }
     const file = resolve(ASSETS_BASE, rel);
-    if (!file.startsWith(ASSETS_BASE)) {
+    const fromBase = relative(ASSETS_BASE, file);
+    if (isAbsolute(fromBase) || /^\.\.(?:[\\/]|$)/.test(fromBase)) {
       res.statusCode = 403;
       return res.end();
     }
@@ -48,7 +58,8 @@ function hlLocalAssets(): Plugin {
   };
 }
 
-const petCodex = JSON.parse(readFileSync(resolve(__dirname, "data/pet-codex.json"), "utf-8"));
+const petCodex: { id: number; name: string }[] = readData("pet-codex.json");
+const libraryCount = readData("library.json").length;
 const petNameById = new Map(petCodex.map((p: { id: number; name: string }) => [String(p.id), p.name]));
 
 export default defineConfig({
@@ -67,15 +78,12 @@ export default defineConfig({
   lang: "zh-CN",
   head: [
     ["link", { rel: "icon", href: "/logo.png" }],
-    ["meta", { name: "theme-color", content: "#b8860b" }],
+    ["meta", { name: "theme-color", content: "#263d33" }],
     ["meta", { property: "og:site_name", content: "幻灵宝典" }],
     ["meta", { property: "og:type", content: "website" }],
-    ["meta", { property: "og:description", content: "幻灵游侠 2.5 玩家资料站：333 只宠物档案、139 篇攻略文库、82 关天关数据。" }],
+    ["meta", { property: "og:description", content: `幻灵游侠 2.5 玩家资料站：${petCodex.length} 只宠物档案、${libraryCount} 篇玩家文库，以及任务和练级地图。` }],
   ],
-  sitemap: {
-    // 正式域名通过环境变量 DEPLOY_URL 注入（见 DEPLOY.md），未设置时保留占位
-    hostname: process.env.DEPLOY_URL || "https://hl.example.com",
-  },
+  sitemap: process.env.DEPLOY_URL ? { hostname: process.env.DEPLOY_URL } : undefined,
   ignoreDeadLinks: [/^\/pets\/\d+$/],
   vite: {
     plugins: [hlLocalAssets()],
@@ -90,17 +98,23 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.png",
     nav: [
-      { text: "首页", link: "/" },
-      { text: "宝典指南", link: "/guide/" },
-      { text: "宠物图鉴", link: "/pets/" },
-      { text: "物品大全", link: "/items/" },
-      { text: "怪物手册", link: "/monsters/" },
-      { text: "养成进阶", link: "/advanced/" },
-      { text: "任务攻略", link: "/quests/" },
-      { text: "幻灵英雄墙", link: "/heroes/" },
-      { text: "资源库", link: "/resources/" },
-      { text: "历史陈列馆", link: "/museum/" },
-      { text: "关于本站", link: "/about/" },
+      { text: "攻略", activeMatch: "^/(quests|advanced)/", items: [
+        { text: "任务攻略", link: "/quests/" }, { text: "飞升指南", link: "/quests/ascension" },
+        { text: "养成进阶", link: "/advanced/" }, { text: "宝典指南", link: "/guide/" },
+      ] },
+      { text: "图鉴", activeMatch: "^/(pets|items)/", items: [
+        { text: "宠物图鉴", link: "/pets/" }, { text: "物品大全", link: "/items/" },
+        { text: "进化系谱", link: "/pets/evolutions" },
+      ] },
+      { text: "地图与天关", activeMatch: "^/(maps|monsters)/", items: [
+        { text: "地图与练级", link: "/maps/" }, { text: "天关防御表", link: "/monsters/" },
+      ] },
+      { text: "查资料", link: "/search/" },
+      { text: "更多", items: [
+        { text: "玩家文库", link: "/guide/library/" }, { text: "资源与画廊", link: "/resources/" },
+        { text: "英雄墙", link: "/heroes/" }, { text: "历史陈列馆", link: "/museum/" },
+        { text: "关于本站", link: "/about/" },
+      ] },
     ],
     sidebar: {
       "/guide/": [
@@ -205,6 +219,7 @@ export default defineConfig({
       },
     },
     outline: { label: "页面导航", level: [2, 3] },
+    sidebarMenuLabel: "目录",
     docFooter: { prev: "上一页", next: "下一页" },
     returnToTopLabel: "返回顶部",
     footer: {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import library from "../../data/library.json";
 
 interface LibEntry {
@@ -13,15 +13,19 @@ const entries = library as LibEntry[];
 const cats = ["全部", ...Array.from(new Set(entries.map((e) => e.cat)))];
 const activeCat = ref("全部");
 const keyword = ref("");
+const pageSize = 24;
+const limit = ref(pageSize);
+watch([activeCat, keyword], () => { limit.value = pageSize; });
 
 const filtered = computed(() => {
   const k = keyword.value.trim();
   return entries.filter((e) => {
     if (activeCat.value !== "全部" && e.cat !== activeCat.value) return false;
     if (!k) return true;
-    return e.title.includes(k);
+    return `${e.title} ${e.cat}`.includes(k);
   });
 });
+const visible = computed(() => filtered.value.slice(0, limit.value));
 
 const CAT_COLOR: Record<string, string> = {
   宠物练级: "#5cae7d",
@@ -62,13 +66,13 @@ const CAT_ICON: Record<string, string> = {
           {{ c }}<span v-if="c !== '全部'" class="lib-tab-count">{{ entries.filter((e) => e.cat === c).length }}</span>
         </button>
       </div>
-      <input v-model="keyword" class="item-search pc-search" type="search" placeholder="搜索文章标题" />
+      <input v-model="keyword" class="item-search pc-search" type="search" placeholder="搜索标题或主题" aria-label="搜索文库标题或主题" />
     </div>
 
-    <p class="item-count">命中 {{ filtered.length }} 篇 / 共 {{ entries.length }} 篇</p>
+    <p class="item-count" role="status">找到 {{ filtered.length }} 篇 · 显示 {{ visible.length }} 篇 / 文库共 {{ entries.length }} 篇</p>
 
     <div class="lib-grid">
-      <a v-for="e in filtered" :key="e.slug" :href="`/guide/library/${e.slug}`" class="lib-card" :style="{ borderLeftColor: CAT_COLOR[e.cat] ?? 'var(--vp-c-divider)' }">
+      <a v-for="e in visible" :key="e.slug" :href="`/guide/library/${e.slug}`" class="lib-card" :style="{ borderLeftColor: CAT_COLOR[e.cat] ?? 'var(--vp-c-divider)' }">
         <span class="lib-icon" :style="{ color: CAT_COLOR[e.cat], borderColor: (CAT_COLOR[e.cat] ?? '#b8860b') + '55', background: (CAT_COLOR[e.cat] ?? '#b8860b') + '14' }">{{ CAT_ICON[e.cat] ?? "汇" }}</span>
         <div class="lib-body">
           <div class="lib-title">{{ e.title }}</div>
@@ -82,10 +86,16 @@ const CAT_ICON: Record<string, string> = {
         </svg>
       </a>
     </div>
+    <button v-if="visible.length < filtered.length" type="button" class="lib-more" @click="limit += pageSize">
+      显示更多文章（还剩 {{ filtered.length - visible.length }} 篇）
+    </button>
+    <p v-else-if="!visible.length">未找到文章，可以换个词或切回「全部」。</p>
   </div>
 </template>
 
 <style scoped>
+.lib-more { margin-top: 16px; min-height: 44px; border: 1px solid var(--field-line); border-radius: 8px; padding: 6px 13px; color: var(--field-accent); background: var(--field-paper); font-weight: 650; }
+.lib-more:hover { border-color: var(--field-accent); }
 .lib-tab-count {
   font-size: 12px;
   opacity: 0.65;

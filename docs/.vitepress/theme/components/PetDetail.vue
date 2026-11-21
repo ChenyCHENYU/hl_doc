@@ -84,16 +84,23 @@ const gridPoly = computed(() =>
 // ── 五维雷达：攻 / 防 / 敏 / 血 / 成长（按 2026 全表每轴最大值归一）──
 const AXES = ["攻", "防", "敏", "血", "成"];
 function parseAttrs(s: any): number[] {
-  if (s.atk != null) return [Number(s.atk), Number(s.def), Number(s.agi), Number(s.hp)];
-  const m = String(s.attrs ?? "").match(/[\d.]+/g);
-  return m ? m.slice(0, 4).map(Number) : [];
+  const fields = [s.atk, s.def, s.agi, s.hp];
+  if (fields.some((value) => value == null || value === "")) return [];
+  const values = fields.map(Number);
+  return values.every(Number.isFinite) ? values : [];
+}
+function parseGrowth(s: any): number | null {
+  if (s.growth3 == null || s.growth3 === "") return null;
+  const growth = Number(s.growth3);
+  return Number.isFinite(growth) ? growth : null;
 }
 const radarMax = (() => {
   const mx = [0, 0, 0, 0, 0];
   for (const s of stats2026 as any[]) {
     const a = parseAttrs(s);
-    if (a.length < 4) continue;
-    const vals = [...a, Number(s.growth3) || 0];
+    const growth = parseGrowth(s);
+    if (a.length < 4 || growth == null) continue;
+    const vals = [...a, growth];
     vals.forEach((v, i) => {
       if (Number.isFinite(v) && v > mx[i]) mx[i] = v;
     });
@@ -103,8 +110,9 @@ const radarMax = (() => {
 const radarVals = computed<number[]>(() => {
   if (!stat.value) return [];
   const a = parseAttrs(stat.value);
-  if (a.length < 4) return [];
-  return [...a, Number(stat.value.growth3) || 0];
+  const growth = parseGrowth(stat.value);
+  if (a.length < 4 || growth == null) return [];
+  return [...a, growth];
 });
 const radarPoly = computed(() =>
   radarVals.value
@@ -156,8 +164,8 @@ const radarLabels = computed(() =>
             </svg>
             <div class="pd-2026-rows">
               <div v-if="stat.hp"><b>一级属性</b><span>攻 {{ stat.atk }} / 防 {{ stat.def }} / 敏 {{ stat.agi }} / 血 {{ stat.hp }}</span></div>
-              <div v-else><b>一级属性</b><span>{{ stat.attrs }}</span></div>
-              <div><b>生长率</b><span>三围 {{ stat.growth3 }} · 生命 {{ stat.growthHp }}</span></div>
+              <div v-else><b>一级属性</b><span>原始表格待复核</span></div>
+              <div v-if="stat.hp"><b>生长率</b><span>三围 {{ stat.growth3 }} · 生命 {{ stat.growthHp }}</span></div>
               <div><b>分配比例</b><span>{{ stat.dist }}</span></div>
               <div><b>分类</b><span>{{ stat.group }} · {{ stat.type }}</span></div>
             </div>
@@ -190,7 +198,7 @@ const radarLabels = computed(() =>
     <div class="pd-sec">
       <h2>详细资料</h2>
       <div class="pd-rows">
-        <div v-if="pet.source" class="pd-row"><span>抓取出处</span><p>{{ pet.source }}</p></div>
+        <div class="pd-row"><span>抓取出处</span><p>{{ pet.source || "暂无可靠出处" }}</p></div>
         <div v-if="pet.note" class="pd-row"><span>备注</span><p>{{ pet.note }}</p></div>
       </div>
     </div>

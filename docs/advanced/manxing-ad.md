@@ -100,7 +100,7 @@ title: 满属性实操：AD（攻防宠）
 
 敏：65535
 
-<AdvChart img="/hl-assets/hl/manxing/ad-19-e**5382**b1a.png" title="图 19 · 满属性实操：AD（攻防宠） 配图" />
+<AdvChart img="/hl-assets/hl/manxing/ad-19-e5382b1a.png" title="图 19 · 满属性实操：AD（攻防宠） 配图" />
 
 <AdvChart img="/hl-assets/hl/manxing/ad-20-a7e8c4c2.png" title="图 20 · 满属性实操：AD（攻防宠） 配图" />
 

@@ -3,18 +3,16 @@ title: 火属性任务（步骤） - 幻灵宝典任务攻略
 aside: false
 ---
 
-# 火属性任务（步骤）
+# 火属性任务
 
-<TopicHeader cat="任务攻略" src="火属性任务步骤.txt" />
-
-> 来源：《▲幻灵游侠优化资源▲》玩家资料包，原文GBK文本整理。
-
-<QuestFlow flow="fire" />
+<FireQuestGuide />
 
 <AdvChart img="/hl-assets/hl/charts/fire-quest.jpg" title="火属性任务流程图" />
 
 <details>
 <summary>原文参考（纯文本）</summary>
+
+> 来源：《▲幻灵游侠优化资源▲》玩家资料包，原文GBK文本整理。
 
 做任务之前，先准备下任务的所有材料和宠物。这样就容易一气合成的做完这个任务了。
 

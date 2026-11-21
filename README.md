@@ -11,6 +11,8 @@ pnpm build      # 构建校验
 pnpm preview
 ```
 
+首页可按宠物、地图、任务、物品和天关关数查资料。`/quests/fire` 提供任务清单，勾选进度只保存在当前浏览器。`/maps/` 区分地图坐标、历史防御参考与玩家实测。火任务的逐步摘要维护在 `docs/.vitepress/data/fire-checklist.ts`，原攻略仍由提取脚本生成。
+
 ## 数据管线
 
 | 数据 | 事实源 | 更新方式 |

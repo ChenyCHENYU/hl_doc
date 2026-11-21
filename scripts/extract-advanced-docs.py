@@ -50,7 +50,7 @@ def structureize(lines):
         if not t:
             out.append("")
             continue
-        if t.startswith(("> 图", "#", "---")):
+        if t.startswith(("> 图", "#", "---", "<AdvChart ")):
             out.append(t)
             continue
         m = PROB_RE.match(t)

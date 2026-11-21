@@ -1,12 +1,17 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import { assetUrl } from "../assets";
 defineProps<{ img: string; title: string }>();
+const failed = ref(false);
 </script>
 
 <template>
   <figure class="adv-chart">
     <div class="adv-chart-frame">
-      <img :src="img" :alt="title" loading="lazy" @error="($event.target as HTMLElement).closest('.adv-chart-frame')?.classList.add('img-failed'); ($event.target as HTMLElement).remove()" />
-      <span class="adv-chart-fallback">大图已归档 · 待 OSS 图床上线后展示</span>
+      <a v-if="!failed" :href="assetUrl(img)" target="_blank" rel="noopener" :aria-label="`查看大图：${title}`">
+        <img :src="assetUrl(img)" :alt="title" loading="lazy" @error="failed = true" />
+      </a>
+      <span v-else class="adv-chart-fallback">暂时无法显示大图，请参考页面上的文字说明。</span>
     </div>
     <figcaption>{{ title }}</figcaption>
   </figure>
@@ -36,15 +41,10 @@ defineProps<{ img: string; title: string }>();
 }
 
 .adv-chart-fallback {
-  display: none;
   padding: 48px 24px;
   font-size: 13.5px;
   color: var(--vp-c-text-3);
   letter-spacing: 0.05em;
-}
-
-.adv-chart-frame.img-failed .adv-chart-fallback {
-  display: block;
 }
 
 figcaption {

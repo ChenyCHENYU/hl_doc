@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { assetUrl } from "../assets";
 import catalog from "../../data/resource-catalog.json";
 import gallery from "../../data/gallery.json";
 
@@ -37,7 +38,7 @@ const catalogOnlyCount = entries.filter((e) => e.status === "仅编目").length;
 const excludedCount = entries.filter((e) => e.status === "不收录").length;
 
 function src(item: GalleryItem): string {
-  return import.meta.env.DEV ? `/hl-assets/${item.file}` : `https://cheny-chenyu.oss-cn-chengdu.aliyuncs.com/${item.file}`;
+  return assetUrl(item.file);
 }
 
 function onImgError(e: Event) {

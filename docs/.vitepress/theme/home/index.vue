@@ -1,320 +1,156 @@
-<template>
-  <div class="premium-home">
-
-    <!-- ===== HERO ===== -->
-    <section class="hero-section">
-      <div class="hero-mesh" aria-hidden="true"></div>
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-noise" aria-hidden="true"></div>
-
-      <div class="hero-inner">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span class="badge-label">幻灵游侠 2.5 · 非官方粉丝资料站</span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="title-base">幻灵</span><span class="title-gradient">宝典</span>
-        </h1>
-
-        <p class="hero-tagline">把游戏内的宝典、宠物与物品资料线上化、结构化 · 数据提取自 2.5 客户端与玩家整理表格，与官方指南交叉核对</p>
-
-        <div class="hero-cta">
-          <a href="/pets/" class="cta-primary">
-            <span>宠物图鉴</span>
-            <svg class="cta-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="/advanced/" class="cta-secondary">
-            <span>养成进阶</span>
-          </a>
-          <a href="/about/" class="cta-secondary">
-            <span>关于本站</span>
-          </a>
-        </div>
-
-        <a href="/items/" class="hero-eco">
-          <span class="eco-star">★</span>
-          <span>物品直达 — <strong>{{ itemCount }} 条物品描述</strong>，名称 / 描述 / 出处 NPC 全文检索</span>
-          <span class="eco-arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== SCENARIOS ===== -->
-    <section class="preview-section" style="padding-top:72px;padding-bottom:8px;">
-      <div class="preview-inner">
-        <header class="section-header reveal-item">
-          <div class="section-eyebrow"><span class="eyebrow-line"></span><span>开始之前</span></div>
-          <h2 class="section-heading">今天你想玩什么？</h2>
-          <p class="section-sub">按玩家旅程组织的三个入口，新手 30 秒找到自己的路线</p>
-        </header>
-        <div class="scen-grid reveal-item">
-          <a href="/quests/ascension" class="scen-card">
-            <span class="scen-icon">启</span>
-            <div class="scen-body">
-              <b>新手开荒 · 从 0 到五转</b>
-              <p>建号第一只苦行龟 → 301 级飞散仙 → 武当山飞地仙 → 一路飞到天神/魔尊，全流程一页讲清。</p>
-              <span class="scen-tags">飞升全指南 · 称号阶梯 · 投胎规则</span>
-            </div>
-          </a>
-          <a href="/monsters/" class="scen-card">
-            <span class="scen-icon">关</span>
-            <div class="scen-body">
-              <b>天关配装 · 打不过就看表</b>
-              <p>82 关怪物、五行、最大攻击与防御需求全量数据，配装前查一眼少走弯路。</p>
-              <span class="scen-tags">天关防御参数 · 怪物手册</span>
-            </div>
-          </a>
-          <a href="/pets/" class="scen-card">
-            <span class="scen-icon">宠</span>
-            <div class="scen-body">
-              <b>宠物养成 · 从抓宠到满属性</b>
-              <p>333 只宠物档案、32 条进化系谱、重塑价格与 2026 标准属性，附满属性打造三部曲。</p>
-              <span class="scen-tags">图鉴 · 系谱 · 满属性攻略</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PET PREVIEW ===== -->
-    <section class="preview-section">
-      <div class="preview-inner">
-        <header class="section-header reveal-item">
-          <div class="section-eyebrow">
-            <span class="eyebrow-line"></span>
-            <span>宠物图鉴</span>
-          </div>
-          <h2 class="section-heading">明星宠物 · 玩家心中的经典</h2>
-          <p class="section-sub">霹雳虎 · 裁决精灵 · 考拉熊 · 白骨战士 · 小法师……点击进图鉴看 {{ petCount }} 只宠物全档案（进化链 / 出处 / 重塑价格 / 2026 标准属性）</p>
-        </header>
-
-        <div class="preview-grid reveal-item">
-          <a
-            v-for="p in previewPets"
-            :key="p.id"
-            href="/pets/"
-            class="preview-card"
-            :style="{ '--el': elementMeta[p.element]?.color || '#b8860b' }"
-          >
-            <div class="preview-img" :class="{ 'no-img': !p.image }">
-              <span class="preview-glyph">{{ elementMeta[p.element]?.glyph }}</span>
-              <img v-if="p.image" :src="petImg(p)" :alt="p.name" loading="lazy" @error="onPreviewError" />
-            </div>
-            <span class="preview-tier" :class="starTier(p.name)?.cls">{{ starTier(p.name)?.label }}</span>
-            <div class="preview-name">{{ p.name }}</div>
-            <div class="preview-type">{{ p.type && !/^？+$/.test(p.type) ? p.type : (elementMeta[p.element]?.label || '?') + '属性' }}</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EVOLUTION ===== -->
-    <section class="evo-section">
-      <div class="evo-inner">
-        <header class="section-header reveal-item">
-          <div class="section-eyebrow">
-            <span class="eyebrow-line"></span>
-            <span>宠物进化</span>
-          </div>
-          <h2 class="section-heading">四级进化体系 · 真实系谱</h2>
-          <p class="section-sub">真实系谱数据驱动 · 五行各选一条完整进化链，含非法分支、进化条件与终级目标</p>
-        </header>
-
-        <div class="reveal-item"><EvolutionShowcase /></div>
-
-        <div class="evo-links reveal-item">
-          深入阅读：
-          <a href="/pets/evolutions">进化系谱大全（全部 32 条链路）</a> ·
-          <a href="/guide/library/">文库《进化幻化全攻略》</a> ·
-          <a href="/advanced/charts">图表《宠物进化表 2026》</a> ·
-          <a href="/pets/">全部宠物档案</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== DATA BAND ===== -->
-    <section class="band-section">
-      <div class="band-inner reveal-item">
-        <div class="band-stats">
-          <div v-for="stat in stats" :key="stat.label" class="band-stat">
-            <b>{{ stat.number }}</b>
-            <span>{{ stat.label }}</span>
-          </div>
-        </div>
-        <div class="band-divider"></div>
-        <div class="band-pills">
-          <a v-for="f in features.filter((x) => x.link)" :key="f.title" :href="f.link" class="pill">{{ f.icon }} {{ f.title }}</a>
-        </div>
-        <p class="band-copy">
-          非官方粉丝资料站 · 数据来源：游戏客户端（2.5）/ 玩家整理表格 / <a href="https://hl.99.com/guide/" target="_blank" rel="noopener noreferrer">官方指南</a> ·
-          版权归网龙/天晴数码，异议即撤 · 详见<a href="/about/">关于本站</a>
-        </p>
-      </div>
-    </section>
-
-  </div>
-</template>
-
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { items } from "../../data/items";
-import { helpCategories } from "../../data/helpToc";
-import codex from "../../data/pet-codex.json";
-import library from "../../data/library.json";
-import tower from "../../data/tower-defense.json";
-import stats2026 from "../../data/pet-stats-2026.json";
-import gallery from "../../data/gallery.json";
+import { assetUrl } from "../assets";
 
-const itemCount = items.length;
-const petCount = codex.length;
-const libCount = library.length;
-const towerCount = tower.length;
-const stat2026Count = stats2026.length;
-const galleryCount = gallery.length;
-
-const elementMeta: Record<string, { label: string; glyph: string; color: string }> = {
-  metal: { label: "金", glyph: "金", color: "#d4af37" },
-  wood: { label: "木", glyph: "木", color: "#5cae7d" },
-  water: { label: "水", glyph: "水", color: "#5b9bd5" },
-  fire: { label: "火", glyph: "火", color: "#e0664f" },
-  earth: { label: "土", glyph: "土", color: "#c4875a" },
-  shop: { label: "店", glyph: "店", color: "#b8860b" },
-  forge: { label: "锻", glyph: "锻", color: "#97a0b0" },
-};
-
-function petImg(p: any): string {
-  return import.meta.env.DEV ? `/hl-assets/${p.image.ossKey}` : p.image.url;
-}
-
-function onPreviewError(e: Event) {
-  const el = e.target as HTMLElement;
-  const wrap = el.closest(".preview-img");
-  if (wrap) wrap.classList.add("img-failed");
-  el.remove();
-}
-
-const STAR_PETS = ["霹雳虎", "裁决精灵", "幻晶刚", "冰晶刚", "寿眉", "白骨战士", "小法师", "考拉熊", "白骨魅姬", "斑斑虎"];
-
-const previewPets = (() => {
-  const picks: any[] = [];
-  for (const name of STAR_PETS) {
-    const hit = codex.find((p: any) => p.name === name && p.image);
-    if (hit) picks.push(hit);
-  }
-  if (picks.length < 10) {
-    for (const el of ["metal", "water", "earth", "fire", "wood"]) {
-      const extra = codex.find((p: any) => p.element === el && p.image && p.type && !/^？+$/.test(p.type) && !picks.includes(p));
-      if (extra) picks.push(extra);
-    }
-  }
-  return picks.slice(0, 10);
-})();
-
-const STAR_TIERS: Record<string, { label: string; cls: string }> = {
-  幻晶刚: { label: "终级", cls: "t-legend" },
-  裁决精灵: { label: "终级", cls: "t-legend" },
-  冰晶刚: { label: "终级", cls: "t-legend" },
-  霹雳虎: { label: "经典", cls: "t-classic" },
-  斑斑虎: { label: "经典", cls: "t-classic" },
-  白骨战士: { label: "经典", cls: "t-classic" },
-  考拉熊: { label: "人气", cls: "t-pop" },
-  小法师: { label: "人气", cls: "t-pop" },
-  寿眉: { label: "人气", cls: "t-pop" },
-  白骨魅姬: { label: "人气", cls: "t-pop" },
-};
-
-function starTier(name: string) {
-  return STAR_TIERS[name];
-}
-
-const stats = [
-  { number: petCount, label: "宠物条目" },
-  { number: libCount, label: "玩家文库" },
-  { number: itemCount, label: "物品条目" },
-  { number: towerCount, label: "天关数据" },
-  { number: stat2026Count, label: "2026 标准属性" },
-  { number: galleryCount, label: "画廊壁纸" },
+const shortcuts = [
+  { label: "火任务", query: "火任务" },
+  { label: "新山三", query: "新山三" },
+  { label: "苦行龟", query: "苦行龟" },
+  { label: "天关 53", query: "天关 53" },
 ];
 
-const features = [
-  {
-    icon: "宠",
-    title: "宠物图鉴",
-    details: `${petCount} 只宠物按五行分栏，进化链、抓取出处、重塑价格、2026 标准属性一页全查。`,
-    link: "/pets/",
-  },
-  {
-    icon: "书",
-    title: "宝典指南",
-    details: "游戏内 77 页帮助 + 玩家文库 139 篇论坛精华攻略，五大分类全量线上化。",
-    link: "/guide/",
-  },
-  {
-    icon: "物",
-    title: "物品大全",
-    details: `${itemCount} 条物品描述全文检索，名称 / 出处 NPC 一搜即达。`,
-    link: "/items/",
-  },
-  {
-    icon: "怪",
-    title: "怪物手册",
-    details: `天关防御参数 ${towerCount} 关全量表：怪物、五行、最大攻击与防御配装参考。`,
-    link: "/monsters/",
-  },
-  {
-    icon: "炼",
-    title: "养成进阶",
-    details: "满属性打造三部曲、锻造五行相克、招系数排名等 7 张玩法图表与小技巧。",
-    link: "/advanced/",
-  },
-  {
-    icon: "任",
-    title: "任务攻略",
-    details: "水火属性任务、全部飞升流程、2025 新宠终极规则、手机回归指引。",
-    link: "/quests/",
-  },
-  {
-    icon: "英",
-    title: "幻灵英雄墙",
-    details: "玩家风采展示：宠物养成大师、帮派领袖、商人玩家，投稿入驻。",
-    link: "/heroes/",
-  },
-  {
-    icon: "库",
-    title: "资源库",
-    details: "优化资源包全量编目 + 高清壁纸画廊，站内直接浏览。",
-    link: "/resources/",
-  },
-  {
-    icon: "图",
-    title: "地图导航",
-    details: "城市与野外地图索引、传送点说明，规划中。",
-  },
+const routes = [
+  { glyph: "火", tone: "fire", category: "五行任务", title: "跟做火属性任务", text: "先查材料和限时事项，再按 19 条火行令逐步完成。", url: "/quests/fire" },
+  { glyph: "练", tone: "wood", category: "地图与练级", title: "选一处练级地点", text: "对照新山回廊各层，查坐标、参考防御和带阵风险。", url: "/maps/" },
+  { glyph: "飞", tone: "gold", category: "人物成长", title: "查看下一阶飞升", text: "分清人物等级、出征宠物和仙魔两条路线。", url: "/quests/ascension" },
 ];
 
-onMounted(() => {
-  const els = document.querySelectorAll('.reveal-item');
-  if (!els.length) return;
+const entries = [
+  { url: "/pets/", name: "宠物图鉴", detail: "出处、成长与进化" },
+  { url: "/items/", name: "物品大全", detail: "用途与 NPC" },
+  { url: "/monsters/", name: "天关配装", detail: "关卡和防御参数" },
+  { url: "/guide/library/", name: "玩家文库", detail: "攻略原文与旧版资料" },
+];
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-  );
-
-  els.forEach((el) => observer.observe(el));
-});
+const pets = [
+  { id: 118, name: "苦行龟", type: "水", key: "hl/pets/water/d5754277ae.png" },
+  { id: 17, name: "雪凤凰", type: "金", key: "hl/pets/metal/893901c3fb.png" },
+  { id: 233, name: "霹雳虎", type: "火", key: "hl/pets/fire/e5fa4ecfa0.jpeg" },
+];
 </script>
 
-<style scoped lang="scss">
-@use "./index.scss";
+<template>
+  <main class="portal-home field-ui">
+    <div class="portal-shell">
+      <section class="portal-hero" aria-labelledby="portal-title">
+        <div class="hero-copy">
+          <p class="hero-kicker"><span></span> 幻灵游侠 2.5 · 非官方玩家资料站</p>
+          <h1 id="portal-title">幻灵宝典<span>.</span></h1>
+          <p class="hero-summary">任务怎么做、宠物去哪抓、下一阶怎么飞。玩到哪，就查到哪。</p>
+          <form class="field-search portal-search" action="/search/" role="search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input name="q" aria-label="查任务、宠物、物品或地图" placeholder="搜任务、宠物、物品或地图" type="search" required />
+            <button type="submit">查资料</button>
+          </form>
+          <div class="portal-suggestions" aria-label="快速查询">
+            <a v-for="item in shortcuts" :key="item.query" :href="`/search/?q=${encodeURIComponent(item.query)}`">{{ item.label }}</a>
+          </div>
+        </div>
+        <figure class="portal-art">
+          <img src="/hero-bg.png" width="740" height="410" alt="幻灵游侠旧版插画，海岸边的飞毯与码头" fetchpriority="high" />
+          <figcaption>《幻灵游侠》旧版插画 · 天晴数码</figcaption>
+        </figure>
+      </section>
+
+      <section class="portal-section" aria-labelledby="route-title">
+        <div class="portal-heading">
+          <h2 id="route-title">今天要做什么？</h2>
+          <a href="/quests/">全部任务攻略 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="route-grid">
+          <a v-for="r in routes" :key="r.url" class="route-card" :data-tone="r.tone" :href="r.url">
+            <span class="route-glyph" aria-hidden="true">{{ r.glyph }}</span>
+            <span class="route-copy"><small>{{ r.category }}</small><strong>{{ r.title }}</strong><span>{{ r.text }}</span></span>
+            <span class="route-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="portal-bottom" aria-label="资料入口和宠物">
+        <div>
+          <div class="portal-heading"><h2>资料索引</h2></div>
+          <div class="portal-index">
+            <a v-for="entry in entries" :key="entry.url" :href="entry.url">
+              <div><strong>{{ entry.name }}</strong><span>{{ entry.detail }}</span></div>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="portal-heading"><h2>常查宠物</h2><a href="/pets/">全部宠物 <span aria-hidden="true">↗</span></a></div>
+          <div class="portal-pets">
+            <a v-for="pet in pets" :key="pet.id" :href="`/pets/${pet.id}`">
+              <span class="pet-art"><img :src="assetUrl(pet.key)" width="68" height="68" alt="" loading="lazy" @error="($event.target as HTMLElement).hidden = true" /></span>
+              <strong>{{ pet.name }}</strong><span>{{ pet.type }}系</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <footer class="portal-credit"><span>幻灵宝典 · 玩家整理</span><a href="/about/">资料来源与勘误</a></footer>
+    </div>
+  </main>
+</template>
+
+<style scoped>
+.portal-home { background: var(--field-bg); color: var(--field-ink); }
+.portal-shell { width: min(1216px, 100% - 96px); margin: auto; }
+.portal-hero { display: grid; grid-template-columns: 1.02fr 1fr; align-items: center; gap: clamp(24px, 5vw, 80px); padding: 62px 0 44px; }
+.hero-copy, .portal-art { min-width: 0; }
+.hero-kicker { display: flex; align-items: center; gap: 9px; color: var(--field-muted); font-size: 13px; font-weight: 650; letter-spacing: .05em; }
+.hero-kicker span { width: 7px; height: 7px; background: var(--field-accent); border-radius: 50%; }
+.hero-copy h1 { margin: 18px 0 16px; font-family: var(--field-serif); font-size: clamp(55px, 6.6vw, 106px); line-height: 1.04; letter-spacing: -.075em; font-weight: 850; }
+.hero-copy h1 span { color: var(--field-accent); margin-left: .06em; }
+.hero-summary { margin-bottom: 25px; max-width: 33ch; color: var(--field-muted); font-size: 17px; line-height: 1.72; }
+.portal-search { max-width: 510px; }
+.portal-suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.portal-suggestions a { padding: 5px 11px; font-size: 13px; font-weight: 600; line-height: 1.65; color: var(--field-accent); background: var(--field-tint); border-radius: 999px; }
+.portal-suggestions a:hover { color: var(--field-ink); }
+.portal-art { margin: 0; padding: 8px; background: var(--field-paper); border: 1px solid var(--field-line); border-radius: 20px; box-shadow: 0 14px 42px rgb(58 46 22 / 9%); }
+.portal-art img { width: 100%; height: auto; aspect-ratio: 740 / 410; display: block; object-fit: cover; border-radius: 13px; }
+.portal-art figcaption { padding: 7px 5px 1px; color: var(--field-muted); font-size: 12px; }
+.portal-section, .portal-bottom { padding: 26px 0 31px; border-top: 1px solid var(--field-line); }
+.portal-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 17px; }
+.portal-heading h2 { margin: 0; color: var(--field-ink); font-family: var(--field-serif); font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.35; }
+.portal-heading > a { color: var(--field-accent); font-size: 13px; font-weight: 700; }
+.route-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.route-card { display: flex; align-items: flex-start; gap: 13px; min-width: 0; padding: 18px; border: 1px solid var(--field-line); border-radius: 14px; background: var(--field-paper); }
+.route-card:hover, .portal-index a:hover, .portal-pets a:hover { border-color: var(--field-accent); }
+.route-card[data-tone="fire"] { --route-color: var(--field-fire); }
+.route-card[data-tone="wood"] { --route-color: var(--field-wood); }
+.route-card[data-tone="gold"] { --route-color: var(--field-accent); }
+.route-glyph { display: grid; place-items: center; flex: 0 0 40px; height: 40px; color: var(--route-color); background: color-mix(in srgb, var(--route-color) 10%, var(--field-paper)); border-radius: 10px; font-family: var(--field-serif); font-size: 21px; font-weight: 800; }
+.route-copy { display: grid; gap: 3px; flex: 1; min-width: 0; }
+.route-copy small { color: var(--route-color); font-size: 12px; font-weight: 700; }
+.route-copy strong { color: var(--field-ink); font-size: 18px; line-height: 1.45; }
+.route-copy > span { color: var(--field-muted); font-size: 14px; line-height: 1.65; }
+.route-arrow { color: var(--route-color); }
+.portal-bottom { display: grid; grid-template-columns: 1.12fr 1fr; gap: 32px; }
+.portal-index, .portal-pets { display: grid; gap: 10px; }
+.portal-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.portal-pets { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.portal-index a, .portal-pets a { background: var(--field-paper); border: 1px solid var(--field-line); border-radius: 12px; }
+.portal-index a { display: flex; justify-content: space-between; align-items: center; gap: 5px; padding: 10px 13px; }
+.portal-index strong, .portal-index div span { display: block; }
+.portal-index div span, .portal-pets a > span:last-child { color: var(--field-muted); font-size: 13px; }
+.portal-index a > span { color: var(--field-accent); }
+.portal-pets a { display: grid; justify-items: center; text-align: center; padding: 9px 5px; }
+.pet-art { display: grid; place-items: center; width: 68px; height: 68px; background: var(--field-tint); border-radius: 12px; margin-bottom: 4px; overflow: hidden; }
+.pet-art img { object-fit: contain; }
+.portal-credit { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--field-line); padding: 19px 0 27px; color: var(--field-muted); font-size: 13px; }
+.portal-credit a:hover { color: var(--field-accent); }
+@media (max-width: 1000px) {
+  .portal-shell { width: min(100% - 44px, 920px); }
+  .portal-hero { padding-top: 42px; }
+  .route-card { padding: 14px; gap: 9px; }
+  .route-arrow { display: none; }
+}
+@media (max-width: 710px) {
+  .portal-shell { width: calc(100% - 32px); }
+  .portal-hero { grid-template-columns: 1fr; gap: 22px; padding: 32px 0 25px; }
+  .hero-copy h1 { font-size: clamp(52px, 13vw, 78px); margin-top: 12px; }
+  .hero-summary { margin-bottom: 17px; font-size: 16px; }
+  .portal-art img { max-height: 210px; }
+  .route-grid, .portal-bottom { grid-template-columns: 1fr; }
+  .portal-bottom { gap: 22px; }
+  .route-arrow { display: block; }
+}
 </style>

@@ -280,21 +280,25 @@ for src, title, slug in GUIDES:
         body_md = ascend_md(text)
     if slug in ("water", "fire"):
         flows[slug] = {"title": title, **parse_flow(text)}
+        component = '<FireQuestGuide />' if slug == "fire" else f'<QuestFlow flow="{slug}" />'
+        source = "> 来源：《▲幻灵游侠优化资源▲》玩家资料包，原文GBK文本整理。\n\n"
+        opening = "" if slug == "fire" else f'<TopicHeader cat="任务攻略" src="{src.name}" />\n\n' + source
         md = (
             f"---\ntitle: {title} - 幻灵宝典任务攻略\naside: false\n---\n\n"
-            f"# {title}\n\n"
-            f'<TopicHeader cat="任务攻略" src="{src.name}" />\n\n'
-            f"> 来源：《▲幻灵游侠优化资源▲》玩家资料包，原文GBK文本整理。\n\n"
-            f"<QuestFlow flow=\"{slug}\" />\n"
+            f"# {'火属性任务' if slug == 'fire' else title}\n\n"
+            + opening
+            + f"{component}\n"
             + extra
             + "\n<details>\n<summary>原文参考（纯文本）</summary>\n\n"
+            + (source if slug == "fire" else "")
             + body_md
             + "\n</details>\n"
             + f'\n<TopicRelated cat="任务攻略" topic="{title}" />\n'
         )
     else:
+        aside = "\naside: false" if slug in ("return", "rules2025") else ""
         md = (
-            f"---\ntitle: {title} - 幻灵宝典任务攻略\n---\n\n"
+            f"---\ntitle: {title} - 幻灵宝典任务攻略{aside}\n---\n\n"
             f"# {title}\n\n"
             f'<TopicHeader cat="任务攻略" src="{src.name}" />\n\n'
             f"> 来源：《▲幻灵游侠优化资源▲》玩家资料包，原文GBK文本整理。\n\n"
@@ -313,20 +317,23 @@ if flows:
 
 index = """---
 title: 任务攻略
+aside: false
 ---
 
 # 任务攻略
 
-来自《▲幻灵游侠优化资源▲》玩家资料包的任务与回归攻略，逐步补全游戏全任务线。
+先选你要做的任务。飞升条件看新版指南，旧版攻略保留原文供对照。
 
 <div class="adv-grid">
-  <a href="/quests/water" class="adv-card"><span class="adv-icon">水</span><div><b>水属性任务（简易步骤）</b><p>五系任务之水属性全流程步骤。</p></div></a>
-  <a href="/quests/fire" class="adv-card"><span class="adv-icon">火</span><div><b>火属性任务（步骤）</b><p>五系任务之火属性全流程步骤。</p></div></a>
-  <a href="/quests/ascend" class="adv-card"><span class="adv-icon">飞</span><div><b>全部飞升简易攻略</b><p>各等级飞升（转世）流程简易攻略合集。</p></div></a>
+  <a href="/quests/fire" class="adv-card"><span class="adv-icon">火</span><div><b>火属性任务</b><p>备料、限时事项、19 条火行令路线。</p></div></a>
+  <a href="/quests/water" class="adv-card"><span class="adv-icon">水</span><div><b>水属性任务</b><p>水行令路线、苦行龟、毒药与兽玉。</p></div></a>
+  <a href="/quests/ascension" class="adv-card"><span class="adv-icon">飞</span><div><b>仙魔飞升全指南</b><p>按称号查下一阶的人物、出征宠和药品条件。</p></div></a>
   <a href="/quests/rules2025" class="adv-card"><span class="adv-icon">规</span><div><b>2025 新宠终极规则</b><p>最新版宠物终极规则说明。</p></div></a>
   <a href="/quests/formula" class="adv-card"><span class="adv-icon">式</span><div><b>进化幻化公式与装备介绍</b><p>进化幻化核心公式与装备体系介绍。</p></div></a>
   <a href="/quests/return" class="adv-card"><span class="adv-icon">归</span><div><b>手机玩幻灵与回归指引</b><p>移动端游玩方案与老玩家回归切入点。</p></div></a>
 </div>
+
+[旧版飞升攻略与勘误](/quests/ascend)
 """
 (OUT / "index.md").write_text(index, "utf-8")
 print("quests index done")

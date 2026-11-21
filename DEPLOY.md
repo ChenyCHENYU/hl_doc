@@ -15,7 +15,7 @@
    | 变量 | 说明 |
    |---|---|
    | `TWIKOO_ENV_ID` | Twikoo 服务端地址（见下），如 `https://hl-twikoo-xxx.vercel.app` |
-   | `DEPLOY_URL` | （可选）正式域名，如 `https://hl.example.com`，用于生成 sitemap hostname |
+   | `DEPLOY_URL` | 正式域名，用于生成 sitemap。未配置时不生成 sitemap |
 
 4. 部署后绑定自定义域名（Settings → Domains）
 
@@ -45,7 +45,7 @@ OSS_AK_ID=.. OSS_AK_SECRET=.. node scripts/upload-oss.mjs --source assets/hl/pet
 ## 四、部署前检查
 
 - [ ] `pnpm build` 通过
-- [ ] `DEPLOY_URL` 已配置（sitemap hostname 不再是 hl.example.com 占位）
+- [ ] 已为正式部署配置 `DEPLOY_URL`，并核对 sitemap 中的域名
 - [ ] Twikoo Server 正常、`TWIKOO_ENV_ID` 已配置（评论区左上角不再显示"本地试用模式"）
 - [ ] OSS 三目录（pets/charts/gallery + misc）已上传
 - [ ] 关于页联系方式已换成真实邮箱

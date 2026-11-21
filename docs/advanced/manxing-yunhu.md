@@ -14,13 +14,13 @@ title: 满属性实操：云狐
 
 锻造好三围后要靠幻化来固定三围比例
 
-<AdvChart img="/hl-assets/hl/manxing/yunhu-05-**2474**b9ac.png" title="图 5 · 满属性实操：云狐 配图" />
+<AdvChart img="/hl-assets/hl/manxing/yunhu-05-2474b9ac.png" title="图 5 · 满属性实操：云狐 配图" />
 
 <AdvChart img="/hl-assets/hl/manxing/yunhu-06-f5815436.png" title="图 6 · 满属性实操：云狐 配图" />
 
 <AdvChart img="/hl-assets/hl/manxing/yunhu-07-9f1a17cb.png" title="图 7 · 满属性实操：云狐 配图" />
 
-<AdvChart img="/hl-assets/hl/manxing/yunhu-08-54d**9541**a.png" title="图 8 · 满属性实操：云狐 配图" />
+<AdvChart img="/hl-assets/hl/manxing/yunhu-08-54d9541a.png" title="图 8 · 满属性实操：云狐 配图" />
 
 <AdvChart img="/hl-assets/hl/manxing/yunhu-09-60bafd2e.png" title="图 9 · 满属性实操：云狐 配图" />
 

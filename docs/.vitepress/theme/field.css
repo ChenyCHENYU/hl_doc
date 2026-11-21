@@ -1,0 +1,64 @@
+:root {
+  --field-bg: #f4f0e6;
+  --field-paper: #fffdf7;
+  --field-ink: #252c25;
+  --field-muted: #515b51;
+  --field-line: #dcd4c3;
+  --field-tint: #ebe5d6;
+  --field-accent: #795722;
+  --field-fire: #923f2e;
+  --field-wood: #346451;
+  --field-action: #263d33;
+  --field-action-text: #fffdf6;
+  --field-serif: "Songti SC", "Noto Serif CJK SC", "SimSun", Georgia, serif;
+}
+.dark {
+  --field-bg: #171a17;
+  --field-paper: #202520;
+  --field-ink: #f2ecde;
+  --field-muted: #bbbdb0;
+  --field-line: #41493d;
+  --field-tint: #2b332a;
+  --field-accent: #e1bc76;
+  --field-fire: #f5a78d;
+  --field-wood: #a2cfb8;
+  --field-action: #d3e6d7;
+  --field-action-text: #14291f;
+}
+.field-ui a:focus-visible,
+.field-ui button:focus-visible,
+.field-ui input:focus-visible,
+.field-ui summary:focus-visible { outline: 2px solid var(--field-accent); outline-offset: 3px; }
+.field-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 13px;
+  border: 1px solid var(--field-line);
+  border-radius: 12px;
+  background: var(--field-paper);
+  color: var(--field-muted);
+}
+.field-search:focus-within { border-color: var(--field-accent); }
+.field-search svg { flex: none; }
+.field-search input { flex: 1; min-width: 0; padding: 6px 3px; color: var(--field-ink); font-size: 16px; min-height: 44px; }
+.field-search input::placeholder { color: var(--field-muted); opacity: 1; }
+.field-search button {
+  flex: none;
+  min-height: 44px;
+  border-radius: 8px;
+  padding: 0 13px;
+  background: var(--field-action);
+  color: var(--field-action-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+.field-search button:hover { opacity: .88; }
+.field-reading {
+  color: var(--field-ink);
+  max-width: 840px;
+  margin-inline: auto;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.field-reading h2 { font-family: var(--field-serif); font-weight: 800; }
