@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.21.0",
+  "scripts": {
+    "dev": "vitepress dev docs --port 8877",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs --port 8877",
+    "extract:items": "node scripts/extract-items.mjs"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.93.2",
+    "typescript": "^5.9.3",
+    "vitepress": "2.0.0-alpha.20"
+  },
+  "dependencies": {
+    "vue": "^3.5.22"
+  }
+}

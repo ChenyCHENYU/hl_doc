@@ -1,0 +1,1994 @@
+[
+ {
+  "text": "宠物养成",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "宠物受伤度全攻略（老鸟勿",
+    "link": "/guide/library/lib-001"
+   },
+   {
+    "text": "宠物资料",
+    "link": "/guide/library/lib-002"
+   },
+   {
+    "text": "关于养宠经验值的全面分析",
+    "link": "/guide/library/lib-007"
+   },
+   {
+    "text": "宠物变异的规律。。。。",
+    "link": "/guide/library/lib-008"
+   },
+   {
+    "text": "最新更新的宠物分布图",
+    "link": "/guide/library/lib-009"
+   },
+   {
+    "text": "进化幻化全攻略",
+    "link": "/guide/library/lib-011"
+   },
+   {
+    "text": "五转飞养宠相关问题及宠物",
+    "link": "/guide/library/lib-012"
+   },
+   {
+    "text": "养宠经验 VS 抓宠时宠",
+    "link": "/guide/library/lib-013"
+   },
+   {
+    "text": "野生宠物单属性坐标",
+    "link": "/guide/library/lib-014"
+   },
+   {
+    "text": "锻造宠物的帖子我来写一个",
+    "link": "/guide/library/lib-015"
+   },
+   {
+    "text": "50+宠物的幻化公式图：",
+    "link": "/guide/library/lib-016"
+   },
+   {
+    "text": "飞修行、创招、养宠条件的",
+    "link": "/guide/library/lib-092"
+   },
+   {
+    "text": "酷刺头任务、宠物加忠诚任",
+    "link": "/guide/library/lib-124"
+   },
+   {
+    "text": "帮派宠物摆摊,训兽师和护",
+    "link": "/guide/library/lib-150"
+   },
+   {
+    "text": "2.5宠物取得",
+    "link": "/guide/library/bd-001"
+   },
+   {
+    "text": "2.5宠物分布",
+    "link": "/guide/library/bd-002"
+   },
+   {
+    "text": "盘龙尊锻造宠物装备的数据",
+    "link": "/guide/library/bd-005"
+   },
+   {
+    "text": "宠物杂类",
+    "link": "/guide/library/bd-006"
+   },
+   {
+    "text": "探讨9转与宠物成长的关系",
+    "link": "/guide/library/bd-007"
+   },
+   {
+    "text": "三级房屋宠物医生攻略",
+    "link": "/guide/library/bd-011"
+   },
+   {
+    "text": "修行、创招、养宠条件的几点释疑",
+    "link": "/guide/library/bd-033"
+   },
+   {
+    "text": "-666幻宠装备",
+    "link": "/guide/library/bd-106"
+   },
+   {
+    "text": "1512进化宠装",
+    "link": "/guide/library/bd-107"
+   },
+   {
+    "text": "黄龙使、飞天鼠变小鸟或鸠的方法",
+    "link": "/guide/library/bd-111"
+   },
+   {
+    "text": "新山城客栈用功德换宠物、武功等东西的解说",
+    "link": "/guide/library/bd-115"
+   },
+   {
+    "text": "关于五行相生相克，破阵方法详细见解",
+    "link": "/guide/library/bd-116"
+   },
+   {
+    "text": "关于宠物三围的锻造",
+    "link": "/guide/library/bd-118"
+   },
+   {
+    "text": "巧用三化——塑造极品高防宠",
+    "link": "/guide/library/bd-119"
+   },
+   {
+    "text": "利用五行相生做高成长宠",
+    "link": "/guide/library/bd-120"
+   },
+   {
+    "text": "宠物底章专区",
+    "link": "/guide/library/bd-122"
+   },
+   {
+    "text": "幻灵捉宠秘籍",
+    "link": "/guide/library/bd-125"
+   },
+   {
+    "text": "800级+++300攻击的宠物装备",
+    "link": "/guide/library/bd-145"
+   },
+   {
+    "text": "600级+++270防御的宠物装备",
+    "link": "/guide/library/bd-146"
+   },
+   {
+    "text": "0防PK变态宠",
+    "link": "/guide/library/bd-147"
+   },
+   {
+    "text": "超进经验",
+    "link": "/guide/library/bd-148"
+   },
+   {
+    "text": "进化幻化坐标",
+    "link": "/guide/library/bd-149"
+   },
+   {
+    "text": "全部宠物代码",
+    "link": "/guide/library/bd-153"
+   },
+   {
+    "text": "木属性任务",
+    "link": "/guide/library/bd-157"
+   },
+   {
+    "text": "幻灵3.0药品装备宠物大全",
+    "link": "/guide/library/bd-160"
+   },
+   {
+    "text": "[最新消息]关于3。0的飞升以及对宠物的要求（即将开放）",
+    "link": "/guide/library/bd-163"
+   },
+   {
+    "text": "7月10~9月20即将开放的任务表",
+    "link": "/guide/library/bd-165"
+   },
+   {
+    "text": "关于宠物的忠.",
+    "link": "/guide/library/bd-166"
+   },
+   {
+    "text": "宠物装备攻略(90级防敏，攻敏，攻防，纯攻)",
+    "link": "/guide/library/bd-195"
+   },
+   {
+    "text": "宠物幻化进化地址",
+    "link": "/guide/library/bd-197"
+   },
+   {
+    "text": "幻化进化地址（通用的）",
+    "link": "/guide/library/bd-198"
+   },
+   {
+    "text": "幻化进化地址（详细的）",
+    "link": "/guide/library/bd-199"
+   },
+   {
+    "text": "进化、幻化",
+    "link": "/guide/library/bd-200"
+   },
+   {
+    "text": "幻化出双的方法-及进化高成长",
+    "link": "/guide/library/bd-201"
+   },
+   {
+    "text": "宠物进化跟幻化的地图",
+    "link": "/guide/library/bd-202"
+   },
+   {
+    "text": "宠物超进化",
+    "link": "/guide/library/bd-203"
+   },
+   {
+    "text": "养宠经验值的获得",
+    "link": "/guide/library/bd-204"
+   },
+   {
+    "text": "3幻满级没进化过的0防变态PK宠的炼法",
+    "link": "/guide/library/bd-206"
+   },
+   {
+    "text": "幻灵游侠2.5之宠爱一生",
+    "link": "/guide/library/bd-209"
+   },
+   {
+    "text": "象牙~煅造100级+222防--222敏捷的宠物装备的数据",
+    "link": "/guide/library/bd-211"
+   },
+   {
+    "text": "长命锁做的100级++227防御--227敏捷的宠装备的锻造数据",
+    "link": "/guide/library/bd-212"
+   },
+   {
+    "text": "太乙珠煅造100级+233防--233敏捷的宠装备的全部数据",
+    "link": "/guide/library/bd-213"
+   },
+   {
+    "text": "丹凤钗锻造100级+235防--235敏捷的宠物装备的数据",
+    "link": "/guide/library/bd-214"
+   },
+   {
+    "text": "300级++222攻击--666血的宠物装备做法",
+    "link": "/guide/library/bd-215"
+   },
+   {
+    "text": "400级---585血、+240敏的宠装[紫血]数据",
+    "link": "/guide/library/bd-216"
+   },
+   {
+    "text": "盘龙尊锻造宠物装备的数据(300级+230防、10敏)",
+    "link": "/guide/library/bd-217"
+   },
+   {
+    "text": "浅谈PK宠",
+    "link": "/guide/library/bd-218"
+   },
+   {
+    "text": "讲讲宠物炼化",
+    "link": "/guide/library/bd-219"
+   },
+   {
+    "text": "教你做图鉴(宠物资料)",
+    "link": "/guide/library/bd-222"
+   },
+   {
+    "text": "宠物受伤度全攻略",
+    "link": "/guide/library/bd-223"
+   },
+   {
+    "text": "黄龙使、飞天鼠变小鸟或鸠的方法及全部宠物和人物的代码",
+    "link": "/guide/library/bd-277"
+   },
+   {
+    "text": "人天关挂机参考表",
+    "link": "/guide/library/bd-279"
+   },
+   {
+    "text": "种九转的功能说明",
+    "link": "/guide/library/bd-287"
+   },
+   {
+    "text": "“水属性任务”攻略",
+    "link": "/guide/library/bd-314"
+   },
+   {
+    "text": "火属性任务”攻略",
+    "link": "/guide/library/bd-315"
+   },
+   {
+    "text": "宠物催眠任务技能",
+    "link": "/guide/library/bd-323"
+   },
+   {
+    "text": "“乒乓鱼”任务",
+    "link": "/guide/library/bd-326"
+   },
+   {
+    "text": "“雪城宠物店”任务",
+    "link": "/guide/library/bd-327"
+   },
+   {
+    "text": "磐龙-紫血做宠装数据",
+    "link": "/guide/library/bd-343"
+   }
+  ]
+ },
+ {
+  "text": "战斗与PK",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "『天下幻灵』 浅谈PK宠",
+    "link": "/guide/library/lib-003"
+   },
+   {
+    "text": "克与被克伤血公式讨论更新",
+    "link": "/guide/library/lib-006"
+   },
+   {
+    "text": "PK半年多的经验与心得!",
+    "link": "/guide/library/lib-082"
+   },
+   {
+    "text": "献给准备投入PK的朋友们",
+    "link": "/guide/library/lib-083"
+   },
+   {
+    "text": "浅谈山城PK！",
+    "link": "/guide/library/lib-084"
+   },
+   {
+    "text": "总结PK人装备与分配.（",
+    "link": "/guide/library/lib-087"
+   },
+   {
+    "text": "PK装备完全攻略",
+    "link": "/guide/library/bd-044"
+   },
+   {
+    "text": "PK血内药的最佳炼法",
+    "link": "/guide/library/bd-059"
+   },
+   {
+    "text": "挂大仙子",
+    "link": "/guide/library/bd-208"
+   },
+   {
+    "text": "克与被克伤血公式讨论",
+    "link": "/guide/library/bd-220"
+   },
+   {
+    "text": "总结90W修PK人装备与分配",
+    "link": "/guide/library/bd-285"
+   },
+   {
+    "text": "“转魔”任务",
+    "link": "/guide/library/bd-301"
+   },
+   {
+    "text": "“转仙”任务",
+    "link": "/guide/library/bd-302"
+   },
+   {
+    "text": "“打入天空之城”任务",
+    "link": "/guide/library/bd-311"
+   },
+   {
+    "text": "“打入地狱”任务",
+    "link": "/guide/library/bd-312"
+   },
+   {
+    "text": "退江湖（关闭pk）任务",
+    "link": "/guide/library/bd-319"
+   }
+  ]
+ },
+ {
+  "text": "宠物练级",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "五系宠物练级路线",
+    "link": "/guide/library/lib-004"
+   },
+   {
+    "text": "重新整理的五属性宠练级路",
+    "link": "/guide/library/lib-005"
+   },
+   {
+    "text": "新木系宠升级路线——大象",
+    "link": "/guide/library/lib-010"
+   },
+   {
+    "text": "全防人快速练级路径",
+    "link": "/guide/library/lib-090"
+   },
+   {
+    "text": "2.5推荐养宠路线",
+    "link": "/guide/library/bd-003"
+   },
+   {
+    "text": "极速练宠法",
+    "link": "/guide/library/bd-004"
+   },
+   {
+    "text": "新人练级详细路线",
+    "link": "/guide/library/bd-035"
+   },
+   {
+    "text": "极品PK宠~极品练级宠",
+    "link": "/guide/library/bd-144"
+   },
+   {
+    "text": "宠物练级攻略（1秒N战满血升级）",
+    "link": "/guide/library/bd-196"
+   },
+   {
+    "text": "3幻满级没进化过的0敏变态练级宠的养法：",
+    "link": "/guide/library/bd-205"
+   },
+   {
+    "text": "五属性宠练级路（适合全部高低敏宠）",
+    "link": "/guide/library/bd-221"
+   }
+  ]
+ },
+ {
+  "text": "锻造-防具",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "日月甲锻造-5877内的",
+    "link": "/guide/library/lib-017"
+   },
+   {
+    "text": "正气战衣锻造防衣的数据",
+    "link": "/guide/library/lib-018"
+   },
+   {
+    "text": "堕天甲、云锦天衣煅造防衣",
+    "link": "/guide/library/lib-019"
+   },
+   {
+    "text": "沙城罗星战甲制作防衣的数",
+    "link": "/guide/library/lib-020"
+   },
+   {
+    "text": "“飞羽”锻造敏鞋、防鞋、",
+    "link": "/guide/library/lib-021"
+   },
+   {
+    "text": "普通鞋子制作敏鞋、防鞋的",
+    "link": "/guide/library/lib-022"
+   },
+   {
+    "text": "正气战衣制作血内衣的数据",
+    "link": "/guide/library/lib-030"
+   },
+   {
+    "text": "正气战衣锻造敏衣、敏内衣",
+    "link": "/guide/library/lib-031"
+   },
+   {
+    "text": "+1980敏标衣数据！",
+    "link": "/guide/library/lib-032"
+   },
+   {
+    "text": "正气战衣煅造血敏衣(+2",
+    "link": "/guide/library/lib-033"
+   },
+   {
+    "text": "普通鞋子制作敏鞋、防鞋的",
+    "link": "/guide/library/lib-050"
+   },
+   {
+    "text": "飞羽椴造极限内血鞋(+5",
+    "link": "/guide/library/lib-051"
+   },
+   {
+    "text": "飞羽做血防鞋的最新数据.",
+    "link": "/guide/library/lib-052"
+   },
+   {
+    "text": "正气战衣作血内衣的最新数",
+    "link": "/guide/library/lib-066"
+   },
+   {
+    "text": "正气战衣煅造血敏衣(+2",
+    "link": "/guide/library/lib-067"
+   },
+   {
+    "text": "+1980敏标衣数据！",
+    "link": "/guide/library/lib-069"
+   },
+   {
+    "text": "沙城罗星战甲制作防衣的数",
+    "link": "/guide/library/lib-070"
+   },
+   {
+    "text": "正气战衣锻造敏衣、敏内衣",
+    "link": "/guide/library/lib-071"
+   },
+   {
+    "text": "正气战衣锻造防衣的数据",
+    "link": "/guide/library/lib-072"
+   },
+   {
+    "text": "日月甲锻造-5877内的",
+    "link": "/guide/library/lib-073"
+   },
+   {
+    "text": "堕天甲、云锦天衣煅造防衣",
+    "link": "/guide/library/lib-074"
+   },
+   {
+    "text": "详解霸王卸甲以及宠攻要求",
+    "link": "/guide/library/lib-101"
+   },
+   {
+    "text": "幻影锦云甲任务(地仙装备",
+    "link": "/guide/library/lib-127"
+   },
+   {
+    "text": "飞纷皓月甲任务(夜叉装备",
+    "link": "/guide/library/lib-128"
+   },
+   {
+    "text": "逍遥战衣任务",
+    "link": "/guide/library/lib-129"
+   },
+   {
+    "text": "送物得甲任务",
+    "link": "/guide/library/lib-139"
+   },
+   {
+    "text": "云锦天衣任务攻略",
+    "link": "/guide/library/bd-014"
+   },
+   {
+    "text": "正气战衣清血敏的方法",
+    "link": "/guide/library/bd-047"
+   },
+   {
+    "text": "沙城罗星战甲制作防衣的数据",
+    "link": "/guide/library/bd-049"
+   },
+   {
+    "text": "正气战衣煅造血敏衣",
+    "link": "/guide/library/bd-050"
+   },
+   {
+    "text": "鞋子",
+    "link": "/guide/library/bd-051"
+   },
+   {
+    "text": "“飞羽”煅造血内鞋(+4860内+2088血)(旧数据)",
+    "link": "/guide/library/bd-052"
+   },
+   {
+    "text": "彪衣",
+    "link": "/guide/library/bd-060"
+   },
+   {
+    "text": "彪鞋",
+    "link": "/guide/library/bd-063"
+   },
+   {
+    "text": "防衣",
+    "link": "/guide/library/bd-067"
+   },
+   {
+    "text": "防鞋-敏鞋[飞羽材料]",
+    "link": "/guide/library/bd-068"
+   },
+   {
+    "text": "防鞋-敏鞋[破甲材料]",
+    "link": "/guide/library/bd-069"
+   },
+   {
+    "text": "防右饰[恋之守护材料]",
+    "link": "/guide/library/bd-072"
+   },
+   {
+    "text": "招鞋",
+    "link": "/guide/library/bd-078"
+   },
+   {
+    "text": "内衣",
+    "link": "/guide/library/bd-081"
+   },
+   {
+    "text": "破甲材料",
+    "link": "/guide/library/bd-083"
+   },
+   {
+    "text": "内彪衣",
+    "link": "/guide/library/bd-086"
+   },
+   {
+    "text": "内彪鞋",
+    "link": "/guide/library/bd-087"
+   },
+   {
+    "text": "防招鞋",
+    "link": "/guide/library/bd-092"
+   },
+   {
+    "text": "防彪衣",
+    "link": "/guide/library/bd-096"
+   },
+   {
+    "text": "防彪鞋",
+    "link": "/guide/library/bd-097"
+   },
+   {
+    "text": "极品防鞋",
+    "link": "/guide/library/bd-103"
+   },
+   {
+    "text": "极品防衣",
+    "link": "/guide/library/bd-104"
+   },
+   {
+    "text": "标衣",
+    "link": "/guide/library/bd-131"
+   },
+   {
+    "text": "标鞋",
+    "link": "/guide/library/bd-132"
+   },
+   {
+    "text": "内鞋",
+    "link": "/guide/library/bd-137"
+   },
+   {
+    "text": "防鞋子",
+    "link": "/guide/library/bd-150"
+   },
+   {
+    "text": "“飞羽”锻造敏鞋、防鞋、血防鞋的数据",
+    "link": "/guide/library/bd-168"
+   },
+   {
+    "text": "破甲",
+    "link": "/guide/library/bd-173"
+   },
+   {
+    "text": "鞋（破甲）",
+    "link": "/guide/library/bd-175"
+   },
+   {
+    "text": "防鞋",
+    "link": "/guide/library/bd-178"
+   },
+   {
+    "text": "1512",
+    "link": "/guide/library/bd-179"
+   },
+   {
+    "text": "-585血、+240敏400级用山城敏戒指数据.",
+    "link": "/guide/library/bd-182"
+   },
+   {
+    "text": "破甲鞋",
+    "link": "/guide/library/bd-183"
+   },
+   {
+    "text": "鞋（飞羽）",
+    "link": "/guide/library/bd-185"
+   },
+   {
+    "text": "飞羽鞋",
+    "link": "/guide/library/bd-186"
+   },
+   {
+    "text": "鞋+6653敏",
+    "link": "/guide/library/bd-190"
+   },
+   {
+    "text": "5985内，6652敏，减攻1995，减300防招标人用内敏鞋（90万满修PK装备）",
+    "link": "/guide/library/bd-229"
+   },
+   {
+    "text": "+4005血,+479攻,+1580敏招人用血敏衣（90万满修PK装备）",
+    "link": "/guide/library/bd-239"
+   },
+   {
+    "text": "+6994血，+233防太乙珠招人PK右饰",
+    "link": "/guide/library/bd-240"
+   },
+   {
+    "text": "磐龙樽制作减血装备最佳做法",
+    "link": "/guide/library/bd-243"
+   },
+   {
+    "text": "飞羽鞋子锻造敏鞋、防鞋、防血鞋资料",
+    "link": "/guide/library/bd-259"
+   },
+   {
+    "text": "飞羽制作PK敏鞋，血内鞋，满修敏内鞋数据整理",
+    "link": "/guide/library/bd-260"
+   },
+   {
+    "text": "堕天甲、云锦天衣煅造血敏衣(+2580血+1980敏)的数据",
+    "link": "/guide/library/bd-261"
+   },
+   {
+    "text": "正气战衣煅造+2137血、+2000内血内衣的数据",
+    "link": "/guide/library/bd-262"
+   },
+   {
+    "text": "正气战衣锻造2000内、883敏衣服数据",
+    "link": "/guide/library/bd-263"
+   },
+   {
+    "text": "正气战衣锻造1152敏、3840防敏衣的数据",
+    "link": "/guide/library/bd-264"
+   },
+   {
+    "text": "恋之守护煅造+222防右佩的数据",
+    "link": "/guide/library/bd-265"
+   },
+   {
+    "text": "丹凤钗锻造+235防0攻击、0敏右饰的数据",
+    "link": "/guide/library/bd-266"
+   },
+   {
+    "text": "堕天甲、云锦天衣煅造各种装备数据",
+    "link": "/guide/library/bd-270"
+   },
+   {
+    "text": "日月甲制做1000级2558防衣全过程！",
+    "link": "/guide/library/bd-271"
+   },
+   {
+    "text": "“御风而行”任务",
+    "link": "/guide/library/bd-332"
+   }
+  ]
+ },
+ {
+  "text": "锻造-武器",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "情剑炼化+120防、66",
+    "link": "/guide/library/lib-023"
+   },
+   {
+    "text": "金光刀做防敏刀的数据!",
+    "link": "/guide/library/lib-029"
+   },
+   {
+    "text": "七夕 -140 敏武器制",
+    "link": "/guide/library/lib-034"
+   },
+   {
+    "text": "七夕任务武器做内血装备的",
+    "link": "/guide/library/lib-036"
+   },
+   {
+    "text": "醉剑锻造的纯攻剑加敏到1",
+    "link": "/guide/library/lib-037"
+   },
+   {
+    "text": "醉剑加敏1135加内30",
+    "link": "/guide/library/lib-038"
+   },
+   {
+    "text": "“醉剑”锻造攻剑、敏剑、",
+    "link": "/guide/library/lib-039"
+   },
+   {
+    "text": "金光刀锻造纯攻刀的数据、",
+    "link": "/guide/library/lib-040"
+   },
+   {
+    "text": "金光刀煅造血内刀的数据 ",
+    "link": "/guide/library/lib-053"
+   },
+   {
+    "text": "金光刀做防敏刀的数据!",
+    "link": "/guide/library/lib-054"
+   },
+   {
+    "text": "情剑炼化+120防、66",
+    "link": "/guide/library/lib-055"
+   },
+   {
+    "text": "金光刀+内到3969的数",
+    "link": "/guide/library/lib-057"
+   },
+   {
+    "text": "七夕任务武器做内血装备的",
+    "link": "/guide/library/lib-058"
+   },
+   {
+    "text": "醉剑加敏1135加内30",
+    "link": "/guide/library/lib-059"
+   },
+   {
+    "text": "七夕武器敏1139内30",
+    "link": "/guide/library/lib-060"
+   },
+   {
+    "text": "沙城-70敏的刀做敏内血",
+    "link": "/guide/library/lib-061"
+   },
+   {
+    "text": "七夕－140敏武器加攻数",
+    "link": "/guide/library/lib-062"
+   },
+   {
+    "text": "普通纯加攻武器的数据",
+    "link": "/guide/library/lib-063"
+   },
+   {
+    "text": "金光刀敏1140内306",
+    "link": "/guide/library/lib-064"
+   },
+   {
+    "text": "金光刀做标刀数据--附加",
+    "link": "/guide/library/lib-065"
+   },
+   {
+    "text": "五行炼化之乾坤五行炉(开",
+    "link": "/guide/library/lib-116"
+   },
+   {
+    "text": "名剑山庄降妖任务",
+    "link": "/guide/library/lib-131"
+   },
+   {
+    "text": "丑剑客升级任务",
+    "link": "/guide/library/lib-142"
+   },
+   {
+    "text": "新手炼化",
+    "link": "/guide/library/bd-039"
+   },
+   {
+    "text": "锻造炼化攻略",
+    "link": "/guide/library/bd-040"
+   },
+   {
+    "text": "七夕武器、赤刀炼化防敏刀的数据",
+    "link": "/guide/library/bd-053"
+   },
+   {
+    "text": "七夕武器加1139敏数据(旧数据)",
+    "link": "/guide/library/bd-054"
+   },
+   {
+    "text": "公开咯：金光刀+1140敏的数据。(旧数据)",
+    "link": "/guide/library/bd-055"
+   },
+   {
+    "text": "1140敏刀+血+内数据(旧数据)",
+    "link": "/guide/library/bd-056"
+   },
+   {
+    "text": "金光刀",
+    "link": "/guide/library/bd-064"
+   },
+   {
+    "text": "醉剑",
+    "link": "/guide/library/bd-065"
+   },
+   {
+    "text": "七夕武器",
+    "link": "/guide/library/bd-066"
+   },
+   {
+    "text": "情剑",
+    "link": "/guide/library/bd-074"
+   },
+   {
+    "text": "七夕武器、赤刀",
+    "link": "/guide/library/bd-075"
+   },
+   {
+    "text": "内彪武器",
+    "link": "/guide/library/bd-088"
+   },
+   {
+    "text": "防招武器",
+    "link": "/guide/library/bd-095"
+   },
+   {
+    "text": "防彪武器",
+    "link": "/guide/library/bd-100"
+   },
+   {
+    "text": "极品敏鞋",
+    "link": "/guide/library/bd-102"
+   },
+   {
+    "text": "极品金光刀",
+    "link": "/guide/library/bd-105"
+   },
+   {
+    "text": "招刀",
+    "link": "/guide/library/bd-127"
+   },
+   {
+    "text": "招剑",
+    "link": "/guide/library/bd-128"
+   },
+   {
+    "text": "标剑",
+    "link": "/guide/library/bd-133"
+   },
+   {
+    "text": "标刀",
+    "link": "/guide/library/bd-134"
+   },
+   {
+    "text": "内刀",
+    "link": "/guide/library/bd-138"
+   },
+   {
+    "text": "内剑",
+    "link": "/guide/library/bd-139"
+   },
+   {
+    "text": "满修装备降修方法",
+    "link": "/guide/library/bd-142"
+   },
+   {
+    "text": "情剑炼化+120防、667敏、210内的新数据",
+    "link": "/guide/library/bd-169"
+   },
+   {
+    "text": "七夕武器（做法1）",
+    "link": "/guide/library/bd-177"
+   },
+   {
+    "text": "防标刀",
+    "link": "/guide/library/bd-184"
+   },
+   {
+    "text": "左+171敏",
+    "link": "/guide/library/bd-187"
+   },
+   {
+    "text": "刀+1140敏",
+    "link": "/guide/library/bd-188"
+   },
+   {
+    "text": "：刀",
+    "link": "/guide/library/bd-193"
+   },
+   {
+    "text": "：剑",
+    "link": "/guide/library/bd-194"
+   },
+   {
+    "text": "+2289血，+5985内，-878攻，+668防，+2927敏内人用鞋（90万满修PK装备）",
+    "link": "/guide/library/bd-228"
+   },
+   {
+    "text": "+4632血、+1138敏标人七夕武器数据（90万满修PK装备）",
+    "link": "/guide/library/bd-230"
+   },
+   {
+    "text": "+4635血、+1138敏标人金光刀数据（90万满修PK装备）",
+    "link": "/guide/library/bd-231"
+   },
+   {
+    "text": "+敏1134+血4620醉剑标人数据（90万满修PK装备）",
+    "link": "/guide/library/bd-232"
+   },
+   {
+    "text": "+3960内、+4593血血内人七夕武器数据（90万满修PK装备）",
+    "link": "/guide/library/bd-233"
+   },
+   {
+    "text": "+3918内、+4553血血内人剑数据（90万满修PK装备）",
+    "link": "/guide/library/bd-234"
+   },
+   {
+    "text": "+3969内、+4602血血内人刀的数据（90万满修PK装备）",
+    "link": "/guide/library/bd-235"
+   },
+   {
+    "text": "+3057内,+1135敏-防1910招人用醉剑（90万满修PK装备）",
+    "link": "/guide/library/bd-236"
+   },
+   {
+    "text": "+3078内,+1139敏-防1927招人用七夕武器（90万满修PK装备）",
+    "link": "/guide/library/bd-237"
+   },
+   {
+    "text": "+3078内,+1140敏-防1931招人用金光刀（90万满修PK装备）",
+    "link": "/guide/library/bd-238"
+   },
+   {
+    "text": "紫血制作-585血PK左饰数据",
+    "link": "/guide/library/bd-242"
+   },
+   {
+    "text": "内血武器的铸造最佳过程",
+    "link": "/guide/library/bd-245"
+   },
+   {
+    "text": "减70敏刀血内敏刀制作过程",
+    "link": "/guide/library/bd-246"
+   },
+   {
+    "text": "—70敏捷刀制作的最佳过程",
+    "link": "/guide/library/bd-247"
+   },
+   {
+    "text": "-70敏捷刀具体最新数据",
+    "link": "/guide/library/bd-248"
+   },
+   {
+    "text": "-70刀做敏血刀的最新数据",
+    "link": "/guide/library/bd-249"
+   },
+   {
+    "text": "经实践整理得到的醉剑最佳数据",
+    "link": "/guide/library/bd-251"
+   },
+   {
+    "text": "-1910防的极品纯攻剑各修行纯点参考",
+    "link": "/guide/library/bd-252"
+   },
+   {
+    "text": "锻造969敏3150内2100血PK剑的数据",
+    "link": "/guide/library/bd-253"
+   },
+   {
+    "text": "醉剑减防加敏（极品攻敏剑）锻造过程及详细数据",
+    "link": "/guide/library/bd-254"
+   },
+   {
+    "text": "+敏1134+血4620醉剑数据",
+    "link": "/guide/library/bd-255"
+   },
+   {
+    "text": "金光刀加敏的研究和数据",
+    "link": "/guide/library/bd-256"
+   },
+   {
+    "text": "+3057内,+1135敏-防1910招人用醉剑",
+    "link": "/guide/library/bd-257"
+   },
+   {
+    "text": "+3078内,+1140敏-防1931招人用金光刀",
+    "link": "/guide/library/bd-258"
+   },
+   {
+    "text": "七夕武器、赤刀炼化+50防、+682敏防敏武器的数据",
+    "link": "/guide/library/bd-267"
+   },
+   {
+    "text": "金光刀做＋１００防，＋６７１敏防敏刀的数据",
+    "link": "/guide/library/bd-268"
+   },
+   {
+    "text": "情剑炼化+120防、666敏、210内的数据",
+    "link": "/guide/library/bd-269"
+   },
+   {
+    "text": "醉拳任务攻略(醉龙舞雪剑的得到方法)",
+    "link": "/guide/library/bd-275"
+   },
+   {
+    "text": "名剑山庄降妖(赤刃)任务",
+    "link": "/guide/library/bd-289"
+   },
+   {
+    "text": "“夜叉王装备”任务",
+    "link": "/guide/library/bd-299"
+   },
+   {
+    "text": "“逍遥战衣与空明拳”任务",
+    "link": "/guide/library/bd-336"
+   }
+  ]
+ },
+ {
+  "text": "锻造-饰品",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "丹凤钗锻造 +235防 ",
+    "link": "/guide/library/lib-025"
+   },
+   {
+    "text": "太乙珠煅造+233防右饰",
+    "link": "/guide/library/lib-026"
+   },
+   {
+    "text": "长命锁加防227右饰的锻",
+    "link": "/guide/library/lib-027"
+   },
+   {
+    "text": "恋之守护煅造+222防(",
+    "link": "/guide/library/lib-028"
+   },
+   {
+    "text": "『天下幻灵』 右饰集锦(",
+    "link": "/guide/library/lib-049"
+   },
+   {
+    "text": "林捕头的玉佩",
+    "link": "/guide/library/lib-134"
+   },
+   {
+    "text": "\"佛珠\"任务",
+    "link": "/guide/library/bd-015"
+   },
+   {
+    "text": "五转飞升详细攻略结论",
+    "link": "/guide/library/bd-027"
+   },
+   {
+    "text": "右饰",
+    "link": "/guide/library/bd-057"
+   },
+   {
+    "text": "身饰的减血方法",
+    "link": "/guide/library/bd-058"
+   },
+   {
+    "text": "彪右饰",
+    "link": "/guide/library/bd-061"
+   },
+   {
+    "text": "彪左饰",
+    "link": "/guide/library/bd-062"
+   },
+   {
+    "text": "防右饰[丹凤材料]",
+    "link": "/guide/library/bd-070"
+   },
+   {
+    "text": "防右饰[长命锁材料]",
+    "link": "/guide/library/bd-071"
+   },
+   {
+    "text": "防左饰",
+    "link": "/guide/library/bd-073"
+   },
+   {
+    "text": "招右饰",
+    "link": "/guide/library/bd-079"
+   },
+   {
+    "text": "招左饰",
+    "link": "/guide/library/bd-080"
+   },
+   {
+    "text": "内左饰",
+    "link": "/guide/library/bd-084"
+   },
+   {
+    "text": "内右饰",
+    "link": "/guide/library/bd-085"
+   },
+   {
+    "text": "内彪左饰",
+    "link": "/guide/library/bd-089"
+   },
+   {
+    "text": "内彪右饰",
+    "link": "/guide/library/bd-090"
+   },
+   {
+    "text": "防招右饰",
+    "link": "/guide/library/bd-093"
+   },
+   {
+    "text": "防招左饰",
+    "link": "/guide/library/bd-094"
+   },
+   {
+    "text": "防彪左饰",
+    "link": "/guide/library/bd-098"
+   },
+   {
+    "text": "防彪右饰",
+    "link": "/guide/library/bd-099"
+   },
+   {
+    "text": "丹凤钗锻造+235防右饰的数据（新数据）",
+    "link": "/guide/library/bd-170"
+   },
+   {
+    "text": "太乙珠煅造+233防右饰的全部数据(新数据)",
+    "link": "/guide/library/bd-171"
+   },
+   {
+    "text": "长命锁+227防右佩的数据(省材版）",
+    "link": "/guide/library/bd-172"
+   },
+   {
+    "text": "右（单凤）",
+    "link": "/guide/library/bd-174"
+   },
+   {
+    "text": "：右",
+    "link": "/guide/library/bd-191"
+   },
+   {
+    "text": "：左",
+    "link": "/guide/library/bd-192"
+   },
+   {
+    "text": "+6994血，+233防太乙珠招人用PK右饰（90万满修PK装备）",
+    "link": "/guide/library/bd-224"
+   },
+   {
+    "text": "+7065血，+235防丹凤钗招人用PK右饰（90万满修PK装备）",
+    "link": "/guide/library/bd-225"
+   },
+   {
+    "text": "-732血，+7332内，+244攻内人用黯神灵戒左饰（90万满修PK装备）",
+    "link": "/guide/library/bd-226"
+   },
+   {
+    "text": "-666血，+6666内，+222攻内人用普通左饰（90万满修PK装备）",
+    "link": "/guide/library/bd-227"
+   },
+   {
+    "text": "-732血，7332内，+244攻内人用黯神灵戒左饰",
+    "link": "/guide/library/bd-241"
+   },
+   {
+    "text": "一般身饰减血方法和作用说明",
+    "link": "/guide/library/bd-244"
+   },
+   {
+    "text": "佛珠任务",
+    "link": "/guide/library/bd-290"
+   },
+   {
+    "text": "“林天的玉佩”任务",
+    "link": "/guide/library/bd-310"
+   },
+   {
+    "text": "开启乾坤五行炉任务",
+    "link": "/guide/library/bd-318"
+   },
+   {
+    "text": "幻灵“进入英雄冢”攻略",
+    "link": "/guide/library/bd-334"
+   }
+  ]
+ },
+ {
+  "text": "综合其他",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "龟壳、龙鳞等物品的出现地",
+    "link": "/guide/library/lib-041"
+   },
+   {
+    "text": "鲁班秘籍所记载的特殊装备",
+    "link": "/guide/library/lib-042"
+   },
+   {
+    "text": "标人的说明",
+    "link": "/guide/library/lib-043"
+   },
+   {
+    "text": "黯神灵戒的两种做法.(五",
+    "link": "/guide/library/lib-046"
+   },
+   {
+    "text": "2000内1171敏的衣",
+    "link": "/guide/library/lib-068"
+   },
+   {
+    "text": "宠爱海底练拳法（扩展为山",
+    "link": "/guide/library/lib-079"
+   },
+   {
+    "text": "“传招 ”详细说明：",
+    "link": "/guide/library/lib-081"
+   },
+   {
+    "text": "创招全攻略（入门篇）",
+    "link": "/guide/library/lib-085"
+   },
+   {
+    "text": "好招是如何练成的.带你走",
+    "link": "/guide/library/lib-086"
+   },
+   {
+    "text": "五转飞升详细攻略（整理中",
+    "link": "/guide/library/lib-088"
+   },
+   {
+    "text": "快速带功德--6个半小时",
+    "link": "/guide/library/lib-089"
+   },
+   {
+    "text": "详解投胎！",
+    "link": "/guide/library/lib-091"
+   },
+   {
+    "text": "『推荐』红利的算法以及攻",
+    "link": "/guide/library/lib-093"
+   },
+   {
+    "text": "{转载}幻灵特殊物品汇总",
+    "link": "/guide/library/lib-094"
+   },
+   {
+    "text": "天关挂机的人防和人敏(理",
+    "link": "/guide/library/lib-095"
+   },
+   {
+    "text": "天关挂机参考表",
+    "link": "/guide/library/lib-097"
+   },
+   {
+    "text": "兄弟天关隐藏关揭密",
+    "link": "/guide/library/lib-100"
+   },
+   {
+    "text": "一级房子升级二级房子",
+    "link": "/guide/library/lib-106"
+   },
+   {
+    "text": "安家置业",
+    "link": "/guide/library/lib-107"
+   },
+   {
+    "text": "水属性任务",
+    "link": "/guide/library/lib-109"
+   },
+   {
+    "text": "火属性任务",
+    "link": "/guide/library/lib-110"
+   },
+   {
+    "text": "幻灵入江湖与退江湖攻略",
+    "link": "/guide/library/lib-111"
+   },
+   {
+    "text": "天魔解体",
+    "link": "/guide/library/lib-113"
+   },
+   {
+    "text": "宝洞寻宝",
+    "link": "/guide/library/lib-114"
+   },
+   {
+    "text": "增加功德值、飞功德玩家的",
+    "link": "/guide/library/lib-115"
+   },
+   {
+    "text": "兵解攻略",
+    "link": "/guide/library/lib-117"
+   },
+   {
+    "text": "鲁班秘籍全攻略",
+    "link": "/guide/library/lib-118"
+   },
+   {
+    "text": "混乱攻击任务",
+    "link": "/guide/library/lib-119"
+   },
+   {
+    "text": "催眠攻击",
+    "link": "/guide/library/lib-120"
+   },
+   {
+    "text": "沙城佛经任务(少林金刚拳",
+    "link": "/guide/library/lib-121"
+   },
+   {
+    "text": "醉拳任务",
+    "link": "/guide/library/lib-122"
+   },
+   {
+    "text": "御风而行(飞行石)",
+    "link": "/guide/library/lib-130"
+   },
+   {
+    "text": "庄周梦蝶",
+    "link": "/guide/library/lib-132"
+   },
+   {
+    "text": "雪狼湖(真爱仙履)任务",
+    "link": "/guide/library/lib-133"
+   },
+   {
+    "text": "恋之守护任务",
+    "link": "/guide/library/lib-135"
+   },
+   {
+    "text": "升级药任务",
+    "link": "/guide/library/lib-137"
+   },
+   {
+    "text": "除小贼任务",
+    "link": "/guide/library/lib-140"
+   },
+   {
+    "text": "送木柄任务",
+    "link": "/guide/library/lib-141"
+   },
+   {
+    "text": "仙魔互转(限制800级以",
+    "link": "/guide/library/lib-143"
+   },
+   {
+    "text": "四转仙魔飞升任务(大罗金",
+    "link": "/guide/library/lib-144"
+   },
+   {
+    "text": "三转仙魔飞升任务(天仙及",
+    "link": "/guide/library/lib-145"
+   },
+   {
+    "text": "二转飞升全攻略－－任务攻",
+    "link": "/guide/library/lib-146"
+   },
+   {
+    "text": "各级双飞简明攻略",
+    "link": "/guide/library/lib-147"
+   },
+   {
+    "text": "投胎转世",
+    "link": "/guide/library/lib-148"
+   },
+   {
+    "text": "篡位攻略",
+    "link": "/guide/library/lib-149"
+   },
+   {
+    "text": "帮派建立住宅小区攻略",
+    "link": "/guide/library/lib-151"
+   },
+   {
+    "text": "帮派购买总坛",
+    "link": "/guide/library/lib-152"
+   },
+   {
+    "text": "二级帮派升级三级帮派",
+    "link": "/guide/library/lib-153"
+   },
+   {
+    "text": "一级帮派升级二级帮派",
+    "link": "/guide/library/lib-154"
+   },
+   {
+    "text": "自动加点，不需任何外挂！",
+    "link": "/guide/library/lib-155"
+   },
+   {
+    "text": "精彩搞笑动作大集合(8.",
+    "link": "/guide/library/lib-156"
+   },
+   {
+    "text": "老虎机攻略(如何积攒你的",
+    "link": "/guide/library/lib-157"
+   },
+   {
+    "text": "帮派总攻略",
+    "link": "/guide/library/lib-158"
+   },
+   {
+    "text": "听雨论坛，听雨传奇，传奇",
+    "link": "/guide/library/lib-159"
+   },
+   {
+    "text": "房屋转让功略",
+    "link": "/guide/library/bd-008"
+   },
+   {
+    "text": "转让房子",
+    "link": "/guide/library/bd-009"
+   },
+   {
+    "text": "二级房子升级三级房子",
+    "link": "/guide/library/bd-010"
+   },
+   {
+    "text": "仙魔互转",
+    "link": "/guide/library/bd-024"
+   },
+   {
+    "text": "夫妻天关的怪物及奖励",
+    "link": "/guide/library/bd-028"
+   },
+   {
+    "text": "天关挂机",
+    "link": "/guide/library/bd-029"
+   },
+   {
+    "text": "兄弟天关怪物及奖励(全)",
+    "link": "/guide/library/bd-030"
+   },
+   {
+    "text": "幻灵特殊物品汇总",
+    "link": "/guide/library/bd-031"
+   },
+   {
+    "text": "红利的算法以及攻防去血量的计算公式",
+    "link": "/guide/library/bd-032"
+   },
+   {
+    "text": "龟壳、龙鳞等物品的出现地和用途",
+    "link": "/guide/library/bd-034"
+   },
+   {
+    "text": "幻灵天劫全过程",
+    "link": "/guide/library/bd-037"
+   },
+   {
+    "text": "乾坤五行炉",
+    "link": "/guide/library/bd-041"
+   },
+   {
+    "text": "五行生克关系",
+    "link": "/guide/library/bd-042"
+   },
+   {
+    "text": "装备新理论",
+    "link": "/guide/library/bd-043"
+   },
+   {
+    "text": "云锦天衣清血的方法",
+    "link": "/guide/library/bd-046"
+   },
+   {
+    "text": "衣服",
+    "link": "/guide/library/bd-048"
+   },
+   {
+    "text": "高敏招衣",
+    "link": "/guide/library/bd-076"
+   },
+   {
+    "text": "防招衣",
+    "link": "/guide/library/bd-091"
+   },
+   {
+    "text": "个性幻灵",
+    "link": "/guide/library/bd-108"
+   },
+   {
+    "text": "游戏时辰与标准时间对照",
+    "link": "/guide/library/bd-109"
+   },
+   {
+    "text": "如何使用3行传音...",
+    "link": "/guide/library/bd-110"
+   },
+   {
+    "text": "赌钱详解",
+    "link": "/guide/library/bd-112"
+   },
+   {
+    "text": "幻灵挣钱基本法",
+    "link": "/guide/library/bd-113"
+   },
+   {
+    "text": "自动加点",
+    "link": "/guide/library/bd-114"
+   },
+   {
+    "text": "新手专用0级装备",
+    "link": "/guide/library/bd-117"
+   },
+   {
+    "text": "利用五行相生高成长妖姬地藏兽做法",
+    "link": "/guide/library/bd-121"
+   },
+   {
+    "text": "我的极品之路",
+    "link": "/guide/library/bd-123"
+   },
+   {
+    "text": "幻灵赚钱方法",
+    "link": "/guide/library/bd-124"
+   },
+   {
+    "text": "招衣++1",
+    "link": "/guide/library/bd-126"
+   },
+   {
+    "text": "标右",
+    "link": "/guide/library/bd-135"
+   },
+   {
+    "text": "标左",
+    "link": "/guide/library/bd-136"
+   },
+   {
+    "text": "内右",
+    "link": "/guide/library/bd-140"
+   },
+   {
+    "text": "内左",
+    "link": "/guide/library/bd-141"
+   },
+   {
+    "text": "幻灵2.5地图名称及代码",
+    "link": "/guide/library/bd-151"
+   },
+   {
+    "text": "幻灵地图代码及未知地图照",
+    "link": "/guide/library/bd-152"
+   },
+   {
+    "text": "全部人物代码",
+    "link": "/guide/library/bd-154"
+   },
+   {
+    "text": "特殊字符",
+    "link": "/guide/library/bd-155"
+   },
+   {
+    "text": "奇幻游侠",
+    "link": "/guide/library/bd-156"
+   },
+   {
+    "text": "3。0资料",
+    "link": "/guide/library/bd-158"
+   },
+   {
+    "text": "公测FAQ",
+    "link": "/guide/library/bd-159"
+   },
+   {
+    "text": "[原创]练功房挂机1-120各级升级所需要的经验及时间",
+    "link": "/guide/library/bd-162"
+   },
+   {
+    "text": "一些不方便排版的网页",
+    "link": "/guide/library/bd-164"
+   },
+   {
+    "text": "~乾坤五行炉的相关介绍~",
+    "link": "/guide/library/bd-167"
+   },
+   {
+    "text": "左（加血盘龙）",
+    "link": "/guide/library/bd-176"
+   },
+   {
+    "text": "-减血666幻装1",
+    "link": "/guide/library/bd-180"
+   },
+   {
+    "text": "衣+1980敏",
+    "link": "/guide/library/bd-189"
+   },
+   {
+    "text": "任意点记录",
+    "link": "/guide/library/bd-207"
+   },
+   {
+    "text": "【版权声明】",
+    "link": "/guide/library/bd-210"
+   },
+   {
+    "text": "幻灵2.5零距离，免动作",
+    "link": "/guide/library/bd-272"
+   },
+   {
+    "text": "幻灵2.5智力问答题",
+    "link": "/guide/library/bd-273"
+   },
+   {
+    "text": "如何把名字竖起来",
+    "link": "/guide/library/bd-274"
+   },
+   {
+    "text": "关于WinXP下幻灵不能进入选择人物画面的解决方法",
+    "link": "/guide/library/bd-276"
+   },
+   {
+    "text": "积累功德最新最快的办法",
+    "link": "/guide/library/bd-278"
+   },
+   {
+    "text": "幻灵2.5过劫奖品",
+    "link": "/guide/library/bd-280"
+   },
+   {
+    "text": "个人天关挂机的人防和人敏",
+    "link": "/guide/library/bd-282"
+   },
+   {
+    "text": "兄弟天关怪物及奖励",
+    "link": "/guide/library/bd-283"
+   },
+   {
+    "text": "HL地图代码-可以随意修改地图",
+    "link": "/guide/library/bd-284"
+   },
+   {
+    "text": "满修ＰＫ人各种属性详解",
+    "link": "/guide/library/bd-286"
+   },
+   {
+    "text": "如何增加功德值及优势",
+    "link": "/guide/library/bd-288"
+   },
+   {
+    "text": "“摆摊,训兽师和加血MM”攻略",
+    "link": "/guide/library/bd-304"
+   },
+   {
+    "text": "“二级房屋升级”攻略",
+    "link": "/guide/library/bd-305"
+   },
+   {
+    "text": "“安家置业”攻略",
+    "link": "/guide/library/bd-306"
+   },
+   {
+    "text": "夫妻双飞攻略",
+    "link": "/guide/library/bd-316"
+   },
+   {
+    "text": "当你登陆游戏游戏遇到以下只有一半画面的时候？",
+    "link": "/guide/library/bd-340"
+   }
+  ]
+ },
+ {
+  "text": "任务与飞升",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "碧水洞窟赚钱任务",
+    "link": "/guide/library/bd-012"
+   },
+   {
+    "text": "猎人洞窟赚钱任务",
+    "link": "/guide/library/bd-013"
+   },
+   {
+    "text": "乒乓鱼任务",
+    "link": "/guide/library/bd-016"
+   },
+   {
+    "text": "苦行龟任务",
+    "link": "/guide/library/bd-017"
+   },
+   {
+    "text": "空明拳任务",
+    "link": "/guide/library/bd-018"
+   },
+   {
+    "text": "英雄冢任务流程攻略(最终版)",
+    "link": "/guide/library/bd-019"
+   },
+   {
+    "text": "学偷技－－任务攻略",
+    "link": "/guide/library/bd-020"
+   },
+   {
+    "text": "二转飞升全攻略",
+    "link": "/guide/library/bd-021"
+   },
+   {
+    "text": "三转仙魔飞升任务",
+    "link": "/guide/library/bd-022"
+   },
+   {
+    "text": "四转仙魔飞升任务",
+    "link": "/guide/library/bd-023"
+   },
+   {
+    "text": "五转飞升详细攻略仙道",
+    "link": "/guide/library/bd-025"
+   },
+   {
+    "text": "五转飞升详细攻略魔道",
+    "link": "/guide/library/bd-026"
+   },
+   {
+    "text": "新手必读：新手任务攻略",
+    "link": "/guide/library/bd-036"
+   },
+   {
+    "text": "关于地仙投胎和5转投胎的比较（修改）",
+    "link": "/guide/library/bd-038"
+   },
+   {
+    "text": "新手任务",
+    "link": "/guide/library/bd-161"
+   },
+   {
+    "text": "“五转”任务",
+    "link": "/guide/library/bd-291"
+   },
+   {
+    "text": "“由魔入道”任务",
+    "link": "/guide/library/bd-292"
+   },
+   {
+    "text": "“由道入魔”任务",
+    "link": "/guide/library/bd-293"
+   },
+   {
+    "text": "“四转”任务",
+    "link": "/guide/library/bd-294"
+   },
+   {
+    "text": "“投胎任务”攻略",
+    "link": "/guide/library/bd-295"
+   },
+   {
+    "text": "幻灵“兵解攻略”",
+    "link": "/guide/library/bd-296"
+   },
+   {
+    "text": "“三转之转阿修罗”任务",
+    "link": "/guide/library/bd-297"
+   },
+   {
+    "text": "“三转之转天仙”任务",
+    "link": "/guide/library/bd-298"
+   },
+   {
+    "text": "“地仙装备”任务",
+    "link": "/guide/library/bd-300"
+   },
+   {
+    "text": "“帮派购买总坛”任务",
+    "link": "/guide/library/bd-307"
+   },
+   {
+    "text": "“帮派升级”任务",
+    "link": "/guide/library/bd-308"
+   },
+   {
+    "text": "“拿宝箱钥匙”任务",
+    "link": "/guide/library/bd-309"
+   },
+   {
+    "text": "“进海底之城”任务",
+    "link": "/guide/library/bd-313"
+   },
+   {
+    "text": "“天魔解体”任务",
+    "link": "/guide/library/bd-317"
+   },
+   {
+    "text": "“学偷技”的任务",
+    "link": "/guide/library/bd-320"
+   },
+   {
+    "text": "入江湖（开pk）任务",
+    "link": "/guide/library/bd-321"
+   },
+   {
+    "text": "物混乱技能任务",
+    "link": "/guide/library/bd-322"
+   },
+   {
+    "text": "“醉拳系列”任务",
+    "link": "/guide/library/bd-324"
+   },
+   {
+    "text": "“送木柄”任务",
+    "link": "/guide/library/bd-330"
+   },
+   {
+    "text": "“救命药”任务",
+    "link": "/guide/library/bd-331"
+   },
+   {
+    "text": "“庄周梦蝶”任务",
+    "link": "/guide/library/bd-333"
+   },
+   {
+    "text": "“恋之守护”任务",
+    "link": "/guide/library/bd-335"
+   },
+   {
+    "text": "猎人迷药任务",
+    "link": "/guide/library/bd-337"
+   }
+  ]
+ },
+ {
+  "text": "锻造-其他",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "发个-585血、+240",
+    "link": "/guide/library/lib-047"
+   },
+   {
+    "text": "目前最好的煅造材料",
+    "link": "/guide/library/lib-075"
+   },
+   {
+    "text": "煅造新手入门、煅造基础知",
+    "link": "/guide/library/lib-076"
+   },
+   {
+    "text": "锻造高级篇(待完善)",
+    "link": "/guide/library/lib-077"
+   },
+   {
+    "text": "90W修装备数据大搜集.",
+    "link": "/guide/library/lib-078"
+   },
+   {
+    "text": "用最快的速度锻造极限!",
+    "link": "/guide/library/bd-045"
+   },
+   {
+    "text": "血招衣",
+    "link": "/guide/library/bd-077"
+   },
+   {
+    "text": "飞羽材料",
+    "link": "/guide/library/bd-082"
+   },
+   {
+    "text": "堕落神戒数据",
+    "link": "/guide/library/bd-101"
+   },
+   {
+    "text": "招左",
+    "link": "/guide/library/bd-129"
+   },
+   {
+    "text": "招右",
+    "link": "/guide/library/bd-130"
+   },
+   {
+    "text": "满修装备成品数据大集合",
+    "link": "/guide/library/bd-143"
+   },
+   {
+    "text": "300级230防御10敏捷盘龙尊数据.",
+    "link": "/guide/library/bd-181"
+   },
+   {
+    "text": "钩子和环锻造参考数据（敏血内）",
+    "link": "/guide/library/bd-250"
+   },
+   {
+    "text": "幻灵2.5特殊物品的用处",
+    "link": "/guide/library/bd-281"
+   },
+   {
+    "text": "“全本鲁公秘录”任务",
+    "link": "/guide/library/bd-303"
+   },
+   {
+    "text": "全套极品满修PK装备",
+    "link": "/guide/library/bd-341"
+   },
+   {
+    "text": "版权声明",
+    "link": "/guide/library/bd-342"
+   },
+   {
+    "text": "关于偷装",
+    "link": "/guide/library/bd-344"
+   }
+  ]
+ },
+ {
+  "text": "宠物分布",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "单人“百层天关”怪物分布",
+    "link": "/guide/library/lib-099"
+   },
+   {
+    "text": "少林金刚拳任务",
+    "link": "/guide/library/bd-325"
+   },
+   {
+    "text": "“守望林场”任务",
+    "link": "/guide/library/bd-328"
+   },
+   {
+    "text": "“名剑山庄”任务",
+    "link": "/guide/library/bd-329"
+   },
+   {
+    "text": "“猎人洞窟”任务",
+    "link": "/guide/library/bd-338"
+   },
+   {
+    "text": "“碧水洞窟蒙蒙”任务",
+    "link": "/guide/library/bd-339"
+   }
+  ]
+ }
+]

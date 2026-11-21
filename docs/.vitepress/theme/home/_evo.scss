@@ -1,0 +1,151 @@
+@use "./variables" as *;
+
+// ================================================================
+// EVOLUTION SECTION — 宠物进化 + 来源声明
+// ================================================================
+
+.evo-section {
+  padding: 80px 24px 96px;
+  background: var(--vp-c-bg);
+  position: relative;
+}
+
+.evo-inner {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.evo-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+
+.evo-node {
+  flex: 1 1 200px;
+  padding: 20px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  backdrop-filter: blur(10px);
+  transition: border-color $t-fast, box-shadow $t-fast, transform $t-fast;
+}
+
+.evo-node:hover {
+  border-color: $accent-border;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 134, 11, 0.14);
+}
+
+.dark .evo-node:hover {
+  border-color: $accent-d-border;
+  box-shadow: 0 8px 24px rgba(240, 201, 78, 0.18);
+}
+
+.evo-tier {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: $accent;
+  border: 1px solid $accent-border;
+  background: $accent-bg;
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin-bottom: 12px;
+}
+
+.dark .evo-tier {
+  color: $accent-d;
+  border-color: $accent-d-border;
+  background: $accent-d-bg;
+}
+
+.evo-name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--vp-c-text-1);
+}
+
+.evo-arrow {
+  align-self: center;
+  font-size: 22px;
+  color: $accent;
+}
+
+.dark .evo-arrow {
+  color: $accent-d;
+}
+
+.source-note {
+  border-radius: 14px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  backdrop-filter: blur(10px);
+  padding: 18px 24px;
+}
+
+.source-note .note-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--vp-c-text-2);
+}
+
+.source-note .note-body a {
+  color: $accent;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.source-note .note-body a:hover {
+  text-decoration: underline;
+}
+
+.dark .source-note .note-body a {
+  color: $accent-d;
+}
+
+.source-note .note-star {
+  color: $accent;
+  flex-shrink: 0;
+  line-height: 1.8;
+}
+
+.dark .source-note .note-star {
+  color: $accent-d;
+}
+
+@media (max-width: 640px) {
+  .evo-section { padding: 56px 16px 64px; }
+
+  .evo-chain {
+    flex-direction: column;
+  }
+
+  .evo-arrow {
+    align-self: center;
+    transform: rotate(90deg);
+  }
+}
+
+.evo-links {
+  text-align: center;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  margin-bottom: 26px;
+}
+
+.evo-links a {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.evo-links a:hover {
+  text-decoration: underline;
+}

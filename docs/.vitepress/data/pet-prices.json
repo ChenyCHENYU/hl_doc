@@ -1,0 +1,2594 @@
+[
+ {
+  "sys": "水系",
+  "name": "盈盈",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "琳琳",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "珍珍",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "巧巧",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "蛋蛋鱼",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "丸子鱼",
+  "original": "1566",
+  "discount": "0.86",
+  "special": "1350",
+  "charge50": "48.9105",
+  "charge10": "50"
+ },
+ {
+  "sys": "水系",
+  "name": "乒乓鱼",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "羽衣",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "霓裳",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "灵衫",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "彩衣",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "鱼娃娃",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "鱼妞妞",
+  "original": "1566",
+  "discount": "0.82",
+  "special": "1288",
+  "charge50": "46.66424",
+  "charge10": "47.7037037037037"
+ },
+ {
+  "sys": "水系",
+  "name": "鱼妹妹",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "粉衣仙子",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "水系",
+  "name": "绿衣仙子",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "水系",
+  "name": "白衣仙子",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "水系",
+  "name": "彩虹仙子",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "水系",
+  "name": "凌波仙子",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "水系",
+  "name": "戏水仙子",
+  "original": "1566",
+  "discount": "0.77",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "逐浪仙子",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "火系",
+  "name": "匆匆",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "西皮",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "旺旺",
+  "original": "675",
+  "discount": "0.84",
+  "special": "568",
+  "charge50": "20.57864",
+  "charge10": "21.037037037037"
+ },
+ {
+  "sys": "火系",
+  "name": "酷酷",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "阿弟达斯",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "银霜战士",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "幽梦战士",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "重生战士",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "地狱战士",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "嗷日犬",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "追影犬",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "啮风犬",
+  "original": "675",
+  "discount": "0.81",
+  "special": "550",
+  "charge50": "19.9265",
+  "charge10": "20.3703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "竞光犬",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "阿格留斯",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "银霜武士",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "幽梦武士",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "忠灵武士",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "幽灵武士",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "堕落天狼",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "火系",
+  "name": "奇变天狼",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "火系",
+  "name": "幻变天狼",
+  "original": "675",
+  "discount": "0.78",
+  "special": "528",
+  "charge50": "19.12944",
+  "charge10": "19.5555555555556"
+ },
+ {
+  "sys": "火系",
+  "name": "龙卷天狼",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "火系",
+  "name": "阿努比斯",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "火系",
+  "name": "招魂使者",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "火系",
+  "name": "勾魂使者",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "火系",
+  "name": "摄魂使者",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "火系",
+  "name": "驭魂使者",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "金系",
+  "name": "露露鸟",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "努努鸟",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "嘟嘟鸟",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "水晶儿",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "梦晶儿",
+  "original": "5481",
+  "discount": "0.84",
+  "special": "4588",
+  "charge50": "166.22324",
+  "charge10": "169.925925925926"
+ },
+ {
+  "sys": "金系",
+  "name": "拂叶鸠",
+  "original": "216",
+  "discount": "0.78",
+  "special": "168",
+  "charge50": "6.08664",
+  "charge10": "6.22222222222222"
+ },
+ {
+  "sys": "金系",
+  "name": "浴露鸠",
+  "original": "216",
+  "discount": "0.78",
+  "special": "168",
+  "charge50": "6.08664",
+  "charge10": "6.22222222222222"
+ },
+ {
+  "sys": "金系",
+  "name": "觅雾鸠",
+  "original": "216",
+  "discount": "0.78",
+  "special": "168",
+  "charge50": "6.08664",
+  "charge10": "6.22222222222222"
+ },
+ {
+  "sys": "金系",
+  "name": "飞天鼠",
+  "original": "216",
+  "discount": "0.83",
+  "special": "180",
+  "charge50": "6.5214",
+  "charge10": "6.66666666666667"
+ },
+ {
+  "sys": "金系",
+  "name": "青翼鼠",
+  "original": "216",
+  "discount": "0.83",
+  "special": "180",
+  "charge50": "6.5214",
+  "charge10": "6.66666666666667"
+ },
+ {
+  "sys": "金系",
+  "name": "蝠翼鼠",
+  "original": "216",
+  "discount": "0.83",
+  "special": "180",
+  "charge50": "6.5214",
+  "charge10": "6.66666666666667"
+ },
+ {
+  "sys": "金系",
+  "name": "晶天使",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "电晶魄",
+  "original": "5481",
+  "discount": "0.82",
+  "special": "4488",
+  "charge50": "162.60024",
+  "charge10": "166.222222222222"
+ },
+ {
+  "sys": "金系",
+  "name": "雪凤凰",
+  "original": "216",
+  "discount": "0.73",
+  "special": "158",
+  "charge50": "5.72434",
+  "charge10": "5.85185185185185"
+ },
+ {
+  "sys": "金系",
+  "name": "火凤凰",
+  "original": "216",
+  "discount": "0.73",
+  "special": "158",
+  "charge50": "5.72434",
+  "charge10": "5.85185185185185"
+ },
+ {
+  "sys": "金系",
+  "name": "蓝凤凰",
+  "original": "216",
+  "discount": "0.73",
+  "special": "158",
+  "charge50": "5.72434",
+  "charge10": "5.85185185185185"
+ },
+ {
+  "sys": "金系",
+  "name": "梦晶灵",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "金系",
+  "name": "冰晶刚",
+  "original": "5481",
+  "discount": "0.8",
+  "special": "4388",
+  "charge50": "158.97724",
+  "charge10": "162.518518518519"
+ },
+ {
+  "sys": "木系",
+  "name": "鲁鲁",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "淘淘",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "蒙蒙",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "刚雷狒",
+  "original": "216",
+  "discount": "0.78",
+  "special": "168",
+  "charge50": "6.08664",
+  "charge10": "6.22222222222222"
+ },
+ {
+  "sys": "木系",
+  "name": "吼雷狒",
+  "original": "216",
+  "discount": "0.78",
+  "special": "168",
+  "charge50": "6.08664",
+  "charge10": "6.22222222222222"
+ },
+ {
+  "sys": "木系",
+  "name": "奔雷狒",
+  "original": "216",
+  "discount": "0.78",
+  "special": "168",
+  "charge50": "6.08664",
+  "charge10": "6.22222222222222"
+ },
+ {
+  "sys": "木系",
+  "name": "中岳神猿",
+  "original": "216",
+  "discount": "0.73",
+  "special": "158",
+  "charge50": "5.72434",
+  "charge10": "5.85185185185185"
+ },
+ {
+  "sys": "木系",
+  "name": "西岳神猿",
+  "original": "216",
+  "discount": "0.73",
+  "special": "158",
+  "charge50": "5.72434",
+  "charge10": "5.85185185185185"
+ },
+ {
+  "sys": "木系",
+  "name": "东岳神猿",
+  "original": "216",
+  "discount": "0.73",
+  "special": "158",
+  "charge50": "5.72434",
+  "charge10": "5.85185185185185"
+ },
+ {
+  "sys": "土系",
+  "name": "伏地龙",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "纹地龙",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "瞬地龙",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "小金龙",
+  "original": "5481",
+  "discount": "0.84",
+  "special": "4588",
+  "charge50": "166.22324",
+  "charge10": "169.925925925926"
+ },
+ {
+  "sys": "土系",
+  "name": "小猪比特",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "土系",
+  "name": "小猪安特",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "土系",
+  "name": "小猪芬特",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "土系",
+  "name": "小猪多特",
+  "original": "4860",
+  "discount": "0.84",
+  "special": "4088",
+  "charge50": "148.10824",
+  "charge10": "151.407407407407"
+ },
+ {
+  "sys": "土系",
+  "name": "乌漆龙",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "土系",
+  "name": "黄金龙",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "土系",
+  "name": "暴蓝龙",
+  "original": "270",
+  "discount": "0.81",
+  "special": "218",
+  "charge50": "7.89814",
+  "charge10": "8.07407407407407"
+ },
+ {
+  "sys": "土系",
+  "name": "赤阳龙",
+  "original": "5481",
+  "discount": "0.82",
+  "special": "4488",
+  "charge50": "162.60024",
+  "charge10": "166.222222222222"
+ },
+ {
+  "sys": "土系",
+  "name": "火鳞蜴",
+  "original": "216",
+  "discount": "0.83",
+  "special": "180",
+  "charge50": "6.5214",
+  "charge10": "6.66666666666667"
+ },
+ {
+  "sys": "土系",
+  "name": "赤脊蜴",
+  "original": "216",
+  "discount": "0.83",
+  "special": "180",
+  "charge50": "6.5214",
+  "charge10": "6.66666666666667"
+ },
+ {
+  "sys": "土系",
+  "name": "金甲蜴",
+  "original": "216",
+  "discount": "0.83",
+  "special": "180",
+  "charge50": "6.5214",
+  "charge10": "6.66666666666667"
+ },
+ {
+  "sys": "土系",
+  "name": "中山猪",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "西门猪",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "南宫猪",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "北斗猪",
+  "original": "4860",
+  "discount": "0.82",
+  "special": "3988",
+  "charge50": "144.48524",
+  "charge10": "147.703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "黑龙使",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "土系",
+  "name": "黄龙使",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "土系",
+  "name": "青龙使",
+  "original": "270",
+  "discount": "0.77",
+  "special": "208",
+  "charge50": "7.53584",
+  "charge10": "7.7037037037037"
+ },
+ {
+  "sys": "土系",
+  "name": "怒焰飞龙",
+  "original": "5481",
+  "discount": "0.8",
+  "special": "4388",
+  "charge50": "158.97724",
+  "charge10": "162.518518518519"
+ },
+ {
+  "sys": "土系",
+  "name": "南霸天",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "土系",
+  "name": "北霸天",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "土系",
+  "name": "小霸王",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "土系",
+  "name": "西霸天",
+  "original": "4860",
+  "discount": "0.8",
+  "special": "3888",
+  "charge50": "140.86224",
+  "charge10": "144"
+ },
+ {
+  "sys": "水系",
+  "name": "大嘴鳄",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "厚皮鳄",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "硬骨鳄",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "骑士龟",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "铁甲龟",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "苦行龟",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "乌哩头",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "摇爷",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "愣头青",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "卜卜",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "戛戛",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "欧欧",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "红刀",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "绿甲",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "蓝牙",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "水系",
+  "name": "口袋鸭",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "调皮仔",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "开心仔",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "活泼仔",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "刺螺",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "盔螺",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "海螺",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "太郎",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "次郎",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "三郎",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "泡泡豚",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "苦苦豚",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "玄玄豚",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "利箭",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "重箭",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "飞箭",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "长眉",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "智眉",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "寿眉",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "斗斗鱼",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "反斗鱼",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "秀斗鱼",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "上古荒兽",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "太古荒兽",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "远古荒兽",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "幸运星",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "吉祥星",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "守护星",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "水系",
+  "name": "魔鬼鱼",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "迷彩鱼",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "神仙鱼",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "八脚仔",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "墨斗宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "水系",
+  "name": "乌鱼子",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "乐乐熊",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "欢欢熊",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "蜜蜜熊",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "迷惑",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "迷茫",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "小妖",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "火系",
+  "name": "金毛狮王",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "椰子熊",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "辫子熊",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "带子熊",
+  "original": "675",
+  "discount": "0.88",
+  "special": "596",
+  "charge50": "21.59308",
+  "charge10": "22.0740740740741"
+ },
+ {
+  "sys": "火系",
+  "name": "电球宝宝",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "霹雳宝宝",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "闪电宝宝",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "鬼火君",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "烈焰君",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "妖磷君",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "考拉熊",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "小懒熊",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "布尼熊",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "可可",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "豆豆",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "帅帅",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "火系",
+  "name": "闪灵",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "精灵",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "幽灵",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "霹雳虎",
+  "original": "675",
+  "discount": "0.88",
+  "special": "596",
+  "charge50": "21.59308",
+  "charge10": "22.0740740740741"
+ },
+ {
+  "sys": "火系",
+  "name": "斑斑虎",
+  "original": "675",
+  "discount": "0.88",
+  "special": "596",
+  "charge50": "21.59308",
+  "charge10": "22.0740740740741"
+ },
+ {
+  "sys": "火系",
+  "name": "乖乖虎",
+  "original": "675",
+  "discount": "0.88",
+  "special": "596",
+  "charge50": "21.59308",
+  "charge10": "22.0740740740741"
+ },
+ {
+  "sys": "火系",
+  "name": "灵狐",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "月狐",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "火系",
+  "name": "云狐",
+  "original": "1380",
+  "discount": "0.87",
+  "special": "1200",
+  "charge50": "43.476",
+  "charge10": "44.4444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "酷刺头",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "拽刺头",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "呆刺头",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "风舞",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "独行",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "兰萌萌",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "红大嘴",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "白大嘴",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "蓝大嘴",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "金系",
+  "name": "小精卫",
+  "original": "1566",
+  "discount": "0.88",
+  "special": "1380",
+  "charge50": "49.9974",
+  "charge10": "51.1111111111111"
+ },
+ {
+  "sys": "金系",
+  "name": "通宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "元宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "天宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "无敌蛋",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "天使蛋",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "摇滚蛋",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "穿山兽",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "穿地兽",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "穿林兽",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "穿心兽",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "神甲",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "鬼甲",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "魔甲",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "古怪",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "神气",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "哈哈",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "金系",
+  "name": "灵翼龙",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "风翼龙",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "轻翼龙",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "小雷公",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "小雷神",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "金系",
+  "name": "小霹雳",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "木系",
+  "name": "酷毙象",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "衰呆象",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "迷你象",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "红粉象",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "白毛象",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "懒懒象",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "跷跷鼠",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "弹簧鼠",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "橡皮鼠",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "截拳道",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "空手道",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "跆拳道",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "紫蹄先生",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "蓝蹄先生",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "黑蹄先生",
+  "original": "128",
+  "discount": "0.86",
+  "special": "110",
+  "charge50": "3.9853",
+  "charge10": "4.07407407407407"
+ },
+ {
+  "sys": "木系",
+  "name": "阿波罗",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "酋长",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "纳瓦霍",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "花花",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "采采",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "点点",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "拳师",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "武师",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "镖师",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "树妖",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "树精",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "树怪",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "天纹蜂",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "菠萝蜜",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "毒芒蜂",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "瞬天",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "瞬地",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "瞬风",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "木系",
+  "name": "强盗",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "木系",
+  "name": "土匪",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "木系",
+  "name": "山贼",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "木系",
+  "name": "疾风驹",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "木系",
+  "name": "追电驹",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "木系",
+  "name": "迅雷驹",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "大刀",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "中刀",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "黛刀",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "阿泰",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "阿达",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "阿斗",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "洪兴兔",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "草莽兔",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "御林兔",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "小丁当",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "小令当",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "小叮咚",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "小丁当",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "红锦宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "绿锦宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "黄锦宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "工兵蚁",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "小僵尸",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "跳跳鬼",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "木乃伊",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "巫帝",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "法帝",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "魔帝",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "风经蛛",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "地纹蛛",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "玄纬蛛",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "出山鳄",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "伏地鳄",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "过穴鳄",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "伏水麒麟",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "禁水麒麟",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "镇水麒麟",
+  "original": "270",
+  "discount": "0.84",
+  "special": "228",
+  "charge50": "8.26044",
+  "charge10": "8.44444444444444"
+ },
+ {
+  "sys": "土系",
+  "name": "虫宝宝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "虫贝贝",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ },
+ {
+  "sys": "土系",
+  "name": "小虫",
+  "original": "216",
+  "discount": "0.88",
+  "special": "190",
+  "charge50": "6.8837",
+  "charge10": "7.03703703703704"
+ }
+]

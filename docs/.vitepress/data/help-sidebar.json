@@ -1,0 +1,286 @@
+[
+ {
+  "text": "人物与称号",
+  "collapsed": false,
+  "items": [
+   {
+    "text": "称号阶梯与飞升路线",
+    "link": "/guide/titles"
+   },
+   {
+    "text": "专题宝典（页签阅读）",
+    "link": "/guide/cards/gr"
+   }
+  ]
+ },
+ {
+  "text": "宠物系统",
+  "collapsed": false,
+  "items": [
+   {
+    "text": "专题宝典（页签阅读）",
+    "link": "/guide/cards/cw"
+   },
+   {
+    "text": "宠物幻化攻略",
+    "link": "/guide/topics/help08"
+   },
+   {
+    "text": "宠物商店面板",
+    "link": "/guide/topics/help11"
+   },
+   {
+    "text": "宠物图鉴",
+    "link": "/guide/topics/help12"
+   },
+   {
+    "text": "宠物的装备面板",
+    "link": "/guide/topics/help14"
+   },
+   {
+    "text": "养宠攻略",
+    "link": "/guide/topics/help51"
+   },
+   {
+    "text": "幻化高级攻略",
+    "link": "/guide/topics/help65"
+   },
+   {
+    "text": "宠物相生相克",
+    "link": "/guide/topics/help66"
+   },
+   {
+    "text": "宠物的勋章",
+    "link": "/guide/topics/help68"
+   },
+   {
+    "text": "宠物的特点",
+    "link": "/guide/topics/help74"
+   }
+  ]
+ },
+ {
+  "text": "战斗与武功",
+  "collapsed": false,
+  "items": [
+   {
+    "text": "自创武功 · 创招全流程",
+    "link": "/guide/wugong"
+   },
+   {
+    "text": "专题宝典（页签阅读）",
+    "link": "/guide/cards/xx"
+   },
+   {
+    "text": "自创武功",
+    "link": "/guide/topics/help47"
+   },
+   {
+    "text": "修练武功",
+    "link": "/guide/topics/help46"
+   }
+  ]
+ },
+ {
+  "text": "帮派",
+  "collapsed": false,
+  "items": [
+   {
+    "text": "专题宝典（页签阅读）",
+    "link": "/guide/cards/wh"
+   }
+  ]
+ },
+ {
+  "text": "日常玩法",
+  "collapsed": false,
+  "items": [
+   {
+    "text": "专题宝典（页签阅读）",
+    "link": "/guide/cards/gl"
+   },
+   {
+    "text": "锻造",
+    "link": "/guide/topics/help23"
+   }
+  ]
+ },
+ {
+  "text": "新手入门",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "游戏帮助",
+    "link": "/guide/topics/help01"
+   },
+   {
+    "text": "创建游戏角色",
+    "link": "/guide/topics/help16"
+   },
+   {
+    "text": "如何创建人物",
+    "link": "/guide/topics/help17"
+   },
+   {
+    "text": "人物角色类型的塑造",
+    "link": "/guide/topics/help41"
+   },
+   {
+    "text": "新手入门指导",
+    "link": "/guide/topics/help50"
+   },
+   {
+    "text": "人的特点",
+    "link": "/guide/topics/help73"
+   }
+  ]
+ },
+ {
+  "text": "界面与操作",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "保护锁面板",
+    "link": "/guide/topics/help03"
+   },
+   {
+    "text": "常用命令",
+    "link": "/guide/topics/help05"
+   },
+   {
+    "text": "动作",
+    "link": "/guide/topics/help20"
+   },
+   {
+    "text": "队伍管理面板",
+    "link": "/guide/topics/help25"
+   },
+   {
+    "text": "飞升面板",
+    "link": "/guide/topics/help26"
+   },
+   {
+    "text": "高级指令",
+    "link": "/guide/topics/help27"
+   },
+   {
+    "text": "交互",
+    "link": "/guide/topics/help32"
+   },
+   {
+    "text": "快捷键",
+    "link": "/guide/topics/help35"
+   },
+   {
+    "text": "聊天面板",
+    "link": "/guide/topics/help36"
+   },
+   {
+    "text": "领奖面板",
+    "link": "/guide/topics/help37"
+   },
+   {
+    "text": "其他附属按键",
+    "link": "/guide/topics/help38"
+   },
+   {
+    "text": "快捷键",
+    "link": "/guide/topics/help40"
+   },
+   {
+    "text": "商店NPC的买卖面板",
+    "link": "/guide/topics/help44"
+   },
+   {
+    "text": "系统命令",
+    "link": "/guide/topics/help48"
+   },
+   {
+    "text": "详细资料面板",
+    "link": "/guide/topics/help49"
+   },
+   {
+    "text": "驿站面板",
+    "link": "/guide/topics/help52"
+   },
+   {
+    "text": "阵型面板",
+    "link": "/guide/topics/help54"
+   },
+   {
+    "text": "左下面板",
+    "link": "/guide/topics/help56"
+   },
+   {
+    "text": "门派指令",
+    "link": "/guide/topics/help64"
+   },
+   {
+    "text": "环境设置面板",
+    "link": "/guide/topics/help70"
+   },
+   {
+    "text": "黑名单设置面板",
+    "link": "/guide/topics/help71"
+   },
+   {
+    "text": "黑名单设置面板",
+    "link": "/guide/topics/help72"
+   }
+  ]
+ },
+ {
+  "text": "玩法与世界",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "队伍",
+    "link": "/guide/topics/help24"
+   },
+   {
+    "text": "劫富济贫",
+    "link": "/guide/topics/help34"
+   },
+   {
+    "text": "乾坤五行炉",
+    "link": "/guide/topics/help39"
+   },
+   {
+    "text": "五行生克关系",
+    "link": "/guide/topics/help45"
+   },
+   {
+    "text": "服务器组",
+    "link": "/guide/topics/help58"
+   },
+   {
+    "text": "安家置业和房屋交易",
+    "link": "/guide/topics/help63"
+   },
+   {
+    "text": "关于投胎",
+    "link": "/guide/topics/help67"
+   },
+   {
+    "text": "武功传授",
+    "link": "/guide/topics/help69"
+   },
+   {
+    "text": "世界地理分布",
+    "link": "/guide/topics/help75"
+   },
+   {
+    "text": "社会关系",
+    "link": "/guide/topics/help76"
+   },
+   {
+    "text": "建筑物",
+    "link": "/guide/topics/help77"
+   },
+   {
+    "text": "经济活动",
+    "link": "/guide/topics/help78"
+   }
+  ]
+ }
+]
