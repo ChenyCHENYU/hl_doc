@@ -4,9 +4,10 @@ import pets from "../../data/pet-codex.json";
 import library from "../../data/library.json";
 import tower from "../../data/tower-defense.json";
 import { items } from "../../data/items";
+import PetQuickView from "./PetQuickView.vue";
 
 type Group = "全部" | "攻略" | "地图" | "宠物" | "物品" | "天关" | "文库";
-type Entry = { group: Exclude<Group, "全部">; title: string; url: string; detail: string; aliases?: string; key?: string };
+type Entry = { group: Exclude<Group, "全部">; title: string; url: string; detail: string; aliases?: string; key?: string; petId?: number };
 const groups: Group[] = ["全部", "攻略", "地图", "宠物", "物品", "天关", "文库"];
 
 const guideEntries: Entry[] = [
@@ -15,6 +16,7 @@ const guideEntries: Entry[] = [
   { group: "攻略", title: "仙魔飞升全指南", url: "/quests/ascension", detail: "按称号查下一阶的人物等级、出征宠和飞升条件。", aliases: "一转 二转 三转 四转 五转 过劫 散仙 301级苦行龟" },
   { group: "攻略", title: "进化幻化公式", url: "/quests/formula", detail: "进化、幻化与装备相关的玩家资料。", aliases: "幻化 进化 装备" },
   { group: "攻略", title: "回归指引", url: "/quests/return", detail: "给重新回到幻灵的玩家。", aliases: "回归 新手 手机" },
+  { group: "攻略", title: "全部栏目", url: "/guide/catalog", detail: "攻略、图鉴、重塑价格、玩家文库、图表和历史陈列馆的入口。", aliases: "全部资料 全站目录 资源库 壁纸 重塑价格" },
   { group: "地图", title: "新山练级地点对照", url: "/maps/", detail: "回廊一至三层与清幽古洞，按坐标、怪物和风险查资料。", aliases: "新山城 新山 练级 练满 开荒 防御" },
   { group: "地图", title: "新山一 · 九曲回廊（1）", url: "/maps/#new-mountain-1", detail: "新山一的坐标、怪物和防御参考。", aliases: "新山一 新山1 九曲回廊1" },
   { group: "地图", title: "新山二 · 九曲回廊（2）", url: "/maps/#new-mountain-2", detail: "新山二两处练级点及不同怪组。", aliases: "新山二 新山2 九曲回廊2 4500防 4500点防御" },
@@ -25,7 +27,7 @@ const guideEntries: Entry[] = [
 const catalog: Entry[] = [
   ...guideEntries,
   ...pets.map((pet): Entry => ({
-    group: "宠物", title: pet.name, url: `/pets/${pet.id}`,
+    group: "宠物", title: pet.name, petId: pet.id, url: `/pets/${pet.id}`,
     detail: [pet.sheet, pet.type, pet.source].filter(Boolean).join(" · ") || "宠物档案",
     aliases: [pet.evolveNormal, pet.note].filter(Boolean).join(" "),
   })),
@@ -55,6 +57,7 @@ const indexed = catalog.map((entry) => ({
 const input = ref("");
 const group = ref<Group>("全部");
 const expanded = ref(false);
+const quickView = ref<InstanceType<typeof PetQuickView> | null>(null);
 const query = computed(() => input.value.trim());
 const matches = computed(() => {
   const term = normalize(query.value);
@@ -66,6 +69,10 @@ const matches = computed(() => {
     return score ? [{ entry, score: score + (entry.group === "文库" ? 0 : 12) }] : [];
   }).sort((a, b) => b.score - a.score).map(({ entry }) => entry);
 });
+const matchedPets = computed(() => matches.value.flatMap((entry) => entry.petId == null ? [] : [entry.petId]));
+function openResult(event: MouseEvent, item: Entry) {
+  if (item.petId != null) quickView.value?.openFromLink(event, item.petId);
+}
 
 onMounted(() => {
   input.value = new URLSearchParams(window.location.search).get("q") ?? "";
@@ -97,7 +104,7 @@ function filter(value: Group) {
     <p class="ps-state" role="status">{{ query ? `找到 ${matches.length} 条资料` : "常用查询" }}</p>
     <ul v-if="matches.length" class="ps-results">
       <li v-for="item in (expanded ? matches : matches.slice(0, 20))" :key="item.key ?? item.url + item.title">
-        <a :href="item.url">
+        <a :href="item.url" :class="{ 'vp-raw': item.petId != null }" :aria-haspopup="item.petId != null ? 'dialog' : undefined" @click="openResult($event, item)">
           <div><span class="ps-kind">{{ item.group }}</span><strong>{{ item.title }}</strong></div>
           <p>{{ item.detail }}</p>
         </a>
@@ -105,6 +112,7 @@ function filter(value: Group) {
     </ul>
     <p v-else class="ps-empty">这组里没有找到结果。可以切回「全部」，或试试地图简称、NPC 名和数字关卡。</p>
     <button v-if="!expanded && matches.length > 20" class="ps-more" type="button" @click="expanded = true">显示剩余 {{ matches.length - 20 }} 条</button>
+    <PetQuickView ref="quickView" :pet-ids="matchedPets" />
   </div>
 </template>
 

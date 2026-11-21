@@ -35,6 +35,7 @@ const withNote = items.filter((i) => i.note && i.note.length > 4).length;
   <p class="item-count">
     命中 {{ filtered.length }} 条 / 共收录 {{ items.length }} 条，当前显示 {{ visible.length }} 条
   </p>
+  <div class="lookup-scroll" role="region" aria-label="物品查询结果" tabindex="0">
   <table>
     <thead>
       <tr>
@@ -53,6 +54,7 @@ const withNote = items.filter((i) => i.note && i.note.length > 4).length;
       </tr>
     </tbody>
   </table>
+  </div>
   <p v-if="filtered.length > limit" class="item-count">
     <a @click.prevent="limit += 100" href="#">显示更多（还剩 {{ filtered.length - limit }} 条）</a>
   </p>

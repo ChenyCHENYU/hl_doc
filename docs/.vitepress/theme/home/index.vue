@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { nextTick, ref, shallowRef } from "vue";
 import { assetUrl } from "../assets";
+import { EVO_ELEMENTS } from "../evolution";
+import type PetQuickView from "../components/PetQuickView.vue";
+import { data } from "./catalog.data";
 
 const shortcuts = [
   { label: "火任务", query: "火任务" },
@@ -9,23 +13,73 @@ const shortcuts = [
 ];
 
 const routes = [
-  { glyph: "火", tone: "fire", category: "五行任务", title: "跟做火属性任务", text: "先查材料和限时事项，再按 19 条火行令逐步完成。", url: "/quests/fire" },
-  { glyph: "练", tone: "wood", category: "地图与练级", title: "选一处练级地点", text: "对照新山回廊各层，查坐标、参考防御和带阵风险。", url: "/maps/" },
-  { glyph: "飞", tone: "gold", category: "人物成长", title: "查看下一阶飞升", text: "分清人物等级、出征宠物和仙魔两条路线。", url: "/quests/ascension" },
+  { glyph: "火", tone: "fire", title: "火属性任务", text: "查材料、限时事项与火行令路线。", url: "/quests/fire" },
+  { glyph: "练", tone: "wood", title: "找练级地点", text: "对照新山各层坐标、怪物与风险。", url: "/maps/" },
+  { glyph: "飞", tone: "gold", title: "升仙与入魔", text: "从凡人到五转，查下一阶所需条件。", url: "/quests/ascension" },
+  { glyph: "关", tone: "wood", title: "天关配装", text: "按关卡或怪物查看攻击与防御参考。", url: "/monsters/" },
+  { glyph: "养", tone: "gold", title: "宠物养成", text: "查询来源、系谱、重塑价格与标准属性。", url: "/pets/" },
+  { glyph: "锻", tone: "fire", title: "进阶打造", text: "查满属性实操、五行锻造和招式系数。", url: "/advanced/" },
 ];
 
-const entries = [
-  { url: "/pets/", name: "宠物图鉴", detail: "出处、成长与进化" },
-  { url: "/items/", name: "物品大全", detail: "用途与 NPC" },
-  { url: "/monsters/", name: "天关配装", detail: "关卡和防御参数" },
-  { url: "/guide/library/", name: "玩家文库", detail: "攻略原文与旧版资料" },
+const collections = [
+  {
+    name: "攻略与养成",
+    links: [
+      { url: "/guide/", name: "宝典指南", detail: "游戏内帮助与分类目录" },
+      { url: "/quests/", name: "任务攻略", detail: "水火任务、飞升、新宠与回归" },
+      { url: "/advanced/", name: "养成进阶", detail: "满属性、锻造与玩法图表" },
+    ],
+  },
+  {
+    name: "图鉴与查表",
+    links: [
+      { url: "/pets/", name: "宠物图鉴", detail: "出处、成长与进化" },
+      { url: "/pets/prices", name: "重塑价格", detail: "原价、折扣与充值参考" },
+      { url: "/items/", name: "物品大全", detail: "用途与出处 NPC" },
+      { url: "/maps/", name: "地图与练级", detail: "坐标、怪物与风险" },
+      { url: "/monsters/", name: "怪物手册", detail: "天关怪物和防御参数" },
+    ],
+  },
+  {
+    name: "文库与收藏",
+    links: [
+      { url: "/guide/library/", name: "玩家文库", detail: "完整文章与历史攻略" },
+      { url: "/resources/", name: "资源库与画廊", detail: "资料包、图片与壁纸" },
+      { url: "/heroes/", name: "幻灵英雄墙", detail: "玩家与帮派风采" },
+      { url: "/museum/", name: "历史陈列馆", detail: "版本记忆与年代档案" },
+    ],
+  },
 ];
 
-const pets = [
-  { id: 118, name: "苦行龟", type: "水", key: "hl/pets/water/d5754277ae.png" },
-  { id: 17, name: "雪凤凰", type: "金", key: "hl/pets/metal/893901c3fb.png" },
-  { id: 233, name: "霹雳虎", type: "火", key: "hl/pets/fire/e5fa4ecfa0.jpeg" },
-];
+const missingArt = ref(new Set<number>());
+const featuredIds = data.pets.map(pet => pet.id);
+const quickViewComponent = shallowRef<typeof PetQuickView | null>(null);
+const quickView = ref<InstanceType<typeof PetQuickView> | null>(null);
+const previewIds = ref(featuredIds);
+let previewRequest = 0;
+
+async function openPetPreview(event: MouseEvent, id: number, ids: number[]) {
+  if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  if (typeof HTMLDialogElement === "undefined" || typeof HTMLDialogElement.prototype.showModal !== "function") return;
+  const trigger = event.currentTarget as HTMLAnchorElement;
+  event.preventDefault();
+  const request = ++previewRequest;
+  previewIds.value = ids;
+  try {
+    quickViewComponent.value ??= (await import("../components/PetQuickView.vue")).default;
+    await nextTick();
+    if (request === previewRequest) await quickView.value?.open(id, trigger);
+  } catch {
+    if (request === previewRequest) window.location.assign(trigger.href);
+  }
+}
+
+function markMissing(id: number) {
+  missingArt.value.add(id);
+}
+function elementLabel(element: string) {
+  return EVO_ELEMENTS[element]?.label ?? "宠";
+}
 </script>
 
 <template>
@@ -33,9 +87,9 @@ const pets = [
     <div class="portal-shell">
       <section class="portal-hero" aria-labelledby="portal-title">
         <div class="hero-copy">
-          <p class="hero-kicker"><span></span> 幻灵游侠 2.5 · 非官方玩家资料站</p>
-          <h1 id="portal-title">幻灵宝典<span>.</span></h1>
-          <p class="hero-summary">任务怎么做、宠物去哪抓、下一阶怎么飞。玩到哪，就查到哪。</p>
+          <p class="hero-kicker">幻灵游侠 2.5 · 玩家资料站</p>
+          <h1 id="portal-title">幻灵宝典</h1>
+          <p class="hero-summary">查任务流程、宠物出处、成长配方和下一阶飞升条件。</p>
           <form class="field-search portal-search" action="/search/" role="search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             <input name="q" aria-label="查任务、宠物、物品或地图" placeholder="搜任务、宠物、物品或地图" type="search" required />
@@ -51,6 +105,13 @@ const pets = [
         </figure>
       </section>
 
+      <dl class="portal-stats" aria-label="站内资料数量">
+        <div v-for="stat in data.stats" :key="stat.name">
+          <dt><a :href="stat.url">{{ stat.name }}</a></dt>
+          <dd>{{ stat.count }}</dd>
+        </div>
+      </dl>
+
       <section class="portal-section" aria-labelledby="route-title">
         <div class="portal-heading">
           <h2 id="route-title">今天要做什么？</h2>
@@ -59,98 +120,158 @@ const pets = [
         <div class="route-grid">
           <a v-for="r in routes" :key="r.url" class="route-card" :data-tone="r.tone" :href="r.url">
             <span class="route-glyph" aria-hidden="true">{{ r.glyph }}</span>
-            <span class="route-copy"><small>{{ r.category }}</small><strong>{{ r.title }}</strong><span>{{ r.text }}</span></span>
+            <span class="route-copy"><strong>{{ r.title }}</strong><span>{{ r.text }}</span></span>
             <span class="route-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
 
-      <section class="portal-bottom" aria-label="资料入口和宠物">
-        <div>
-          <div class="portal-heading"><h2>资料索引</h2></div>
-          <div class="portal-index">
-            <a v-for="entry in entries" :key="entry.url" :href="entry.url">
-              <div><strong>{{ entry.name }}</strong><span>{{ entry.detail }}</span></div>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
+      <section class="portal-section" aria-labelledby="catalog-title">
+        <div class="portal-heading">
+          <h2 id="catalog-title">资料索引</h2>
+          <a href="/guide/catalog">全部栏目 <span aria-hidden="true">↗</span></a>
         </div>
-        <div>
-          <div class="portal-heading"><h2>常查宠物</h2><a href="/pets/">全部宠物 <span aria-hidden="true">↗</span></a></div>
-          <div class="portal-pets">
-            <a v-for="pet in pets" :key="pet.id" :href="`/pets/${pet.id}`">
-              <span class="pet-art"><img :src="assetUrl(pet.key)" width="68" height="68" alt="" loading="lazy" @error="($event.target as HTMLElement).hidden = true" /></span>
-              <strong>{{ pet.name }}</strong><span>{{ pet.type }}系</span>
-            </a>
-          </div>
+        <div class="collection-grid">
+          <section v-for="section in collections" :key="section.name" class="collection">
+            <h3>{{ section.name }}</h3>
+            <ul>
+              <li v-for="entry in section.links" :key="entry.url">
+                <a :href="entry.url">
+                  <span><strong>{{ entry.name }}</strong><small>{{ entry.detail }}</small></span>
+                  <span class="collection-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </section>
         </div>
       </section>
-      <footer class="portal-credit"><span>幻灵宝典 · 玩家整理</span><a href="/about/">资料来源与勘误</a></footer>
+
+      <section class="portal-section portal-pet-section" aria-labelledby="pet-title">
+        <div class="portal-heading">
+          <h2 id="pet-title">经典宠物</h2>
+          <a href="/pets/">全部 {{ data.stats[0].count }} 只宠物 <span aria-hidden="true">↗</span></a>
+        </div>
+        <ul class="portal-pets">
+          <li v-for="pet in data.pets" :key="pet.id">
+            <a
+              class="vp-raw"
+              :href="`/pets/?pet=${pet.id}`"
+              :style="{ '--pet-accent': EVO_ELEMENTS[pet.element]?.color }"
+              aria-haspopup="dialog"
+              @click="openPetPreview($event, pet.id, featuredIds)"
+            >
+              <span class="pet-art">
+                <img v-if="pet.image && !missingArt.has(pet.id)" :src="assetUrl(pet.image)" width="76" height="66" alt="" loading="lazy" @error="markMissing(pet.id)" />
+                <b v-else aria-hidden="true">{{ elementLabel(pet.element) }}</b>
+              </span>
+              <strong>{{ pet.name }}</strong>
+              <small>{{ elementLabel(pet.element) }}系</small>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="portal-section portal-evolution" aria-labelledby="evolution-title">
+        <div class="portal-heading">
+          <h2 id="evolution-title">五行进化系谱</h2>
+          <a href="/pets/evolutions">浏览全部 {{ data.evolutionCount }} 条系谱 <span aria-hidden="true">↗</span></a>
+        </div>
+        <EvolutionShowcase @preview="openPetPreview" />
+      </section>
+
+      <footer class="portal-credit">
+        <p>非官方玩家资料站 · 内容整理自游戏客户端、玩家资料表格及<a href="https://hl.99.com/guide/" target="_blank" rel="noopener noreferrer">官方指南</a>。游戏原始素材版权归网龙、天晴数码。</p>
+        <a href="/about/">资料来源与勘误</a>
+      </footer>
     </div>
+    <component :is="quickViewComponent" v-if="quickViewComponent" ref="quickView" :pet-ids="previewIds" />
   </main>
 </template>
 
 <style scoped>
-.portal-home { background: var(--field-bg); color: var(--field-ink); }
-.portal-shell { width: min(1216px, 100% - 96px); margin: auto; }
-.portal-hero { display: grid; grid-template-columns: 1.02fr 1fr; align-items: center; gap: clamp(24px, 5vw, 80px); padding: 62px 0 44px; }
+.portal-home { color: var(--field-ink); background: var(--field-bg); }
+.portal-shell { width: min(1160px, 100% - 64px); margin: auto; }
+.portal-hero { display: grid; grid-template-columns: 1.04fr 1fr; align-items: center; gap: clamp(23px, 5vw, 68px); padding: 42px 0 33px; }
 .hero-copy, .portal-art { min-width: 0; }
-.hero-kicker { display: flex; align-items: center; gap: 9px; color: var(--field-muted); font-size: 13px; font-weight: 650; letter-spacing: .05em; }
-.hero-kicker span { width: 7px; height: 7px; background: var(--field-accent); border-radius: 50%; }
-.hero-copy h1 { margin: 18px 0 16px; font-family: var(--field-serif); font-size: clamp(55px, 6.6vw, 106px); line-height: 1.04; letter-spacing: -.075em; font-weight: 850; }
-.hero-copy h1 span { color: var(--field-accent); margin-left: .06em; }
-.hero-summary { margin-bottom: 25px; max-width: 33ch; color: var(--field-muted); font-size: 17px; line-height: 1.72; }
+.hero-kicker { margin: 0; color: var(--field-accent); font-size: 13px; font-weight: 650; }
+.hero-copy h1 { margin: 11px 0 9px; font-family: var(--field-serif); font-size: clamp(48px, 5.8vw, 81px); line-height: 1.15; letter-spacing: -.035em; font-weight: 800; }
+.hero-summary { margin: 0 0 20px; color: var(--field-muted); font-size: 16px; line-height: 1.65; }
 .portal-search { max-width: 510px; }
-.portal-suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.portal-suggestions a { padding: 5px 11px; font-size: 13px; font-weight: 600; line-height: 1.65; color: var(--field-accent); background: var(--field-tint); border-radius: 999px; }
-.portal-suggestions a:hover { color: var(--field-ink); }
-.portal-art { margin: 0; padding: 8px; background: var(--field-paper); border: 1px solid var(--field-line); border-radius: 20px; box-shadow: 0 14px 42px rgb(58 46 22 / 9%); }
-.portal-art img { width: 100%; height: auto; aspect-ratio: 740 / 410; display: block; object-fit: cover; border-radius: 13px; }
-.portal-art figcaption { padding: 7px 5px 1px; color: var(--field-muted); font-size: 12px; }
-.portal-section, .portal-bottom { padding: 26px 0 31px; border-top: 1px solid var(--field-line); }
-.portal-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 17px; }
-.portal-heading h2 { margin: 0; color: var(--field-ink); font-family: var(--field-serif); font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.35; }
+.portal-suggestions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.portal-suggestions a { padding: 4px 10px; font-size: 13px; color: var(--field-ink); background: var(--field-tint); border-radius: 999px; }
+.portal-suggestions a:hover { color: var(--field-accent); }
+.portal-art { margin: 0; }
+.portal-art img { width: 100%; height: auto; aspect-ratio: 740 / 410; display: block; object-fit: cover; border-radius: 13px; border: 1px solid var(--field-line); }
+.portal-art figcaption { margin: 6px 1px 0; color: var(--field-muted); font-size: 12px; }
+.portal-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin: 0 0 28px; padding: 10px 0; border-block: 1px solid var(--field-line); }
+.portal-stats div { display: flex; flex-direction: column-reverse; align-items: center; gap: 2px; padding: 7px 5px; text-align: center; }
+.portal-stats div + div { border-inline-start: 1px solid var(--field-line); }
+.portal-stats dd { margin: 0; font-size: clamp(21px, 2.5vw, 27px); font-weight: 750; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.portal-stats dt { color: var(--field-muted); font-size: 13px; }
+.portal-stats dt a:hover { color: var(--field-accent); text-decoration: underline; text-underline-offset: 3px; }
+.portal-section { padding: 25px 0 28px; border-bottom: 1px solid var(--field-line); }
+.portal-stats + .portal-section { padding-top: 0; }
+.portal-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 14px; }
+.portal-heading h2 { margin: 0; color: var(--field-ink); font-family: var(--field-serif); font-size: clamp(23px, 2.6vw, 32px); font-weight: 800; line-height: 1.4; }
 .portal-heading > a { color: var(--field-accent); font-size: 13px; font-weight: 700; }
-.route-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.route-card { display: flex; align-items: flex-start; gap: 13px; min-width: 0; padding: 18px; border: 1px solid var(--field-line); border-radius: 14px; background: var(--field-paper); }
-.route-card:hover, .portal-index a:hover, .portal-pets a:hover { border-color: var(--field-accent); }
+.portal-heading > a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.route-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.route-card { display: flex; align-items: flex-start; gap: 10px; min-width: 0; padding: 13px; border: 1px solid var(--field-line); border-radius: 10px; background: var(--field-paper); }
+.route-card:hover { border-color: var(--field-accent); }
 .route-card[data-tone="fire"] { --route-color: var(--field-fire); }
 .route-card[data-tone="wood"] { --route-color: var(--field-wood); }
 .route-card[data-tone="gold"] { --route-color: var(--field-accent); }
-.route-glyph { display: grid; place-items: center; flex: 0 0 40px; height: 40px; color: var(--route-color); background: color-mix(in srgb, var(--route-color) 10%, var(--field-paper)); border-radius: 10px; font-family: var(--field-serif); font-size: 21px; font-weight: 800; }
-.route-copy { display: grid; gap: 3px; flex: 1; min-width: 0; }
-.route-copy small { color: var(--route-color); font-size: 12px; font-weight: 700; }
-.route-copy strong { color: var(--field-ink); font-size: 18px; line-height: 1.45; }
-.route-copy > span { color: var(--field-muted); font-size: 14px; line-height: 1.65; }
-.route-arrow { color: var(--route-color); }
-.portal-bottom { display: grid; grid-template-columns: 1.12fr 1fr; gap: 32px; }
-.portal-index, .portal-pets { display: grid; gap: 10px; }
-.portal-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.portal-pets { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.portal-index a, .portal-pets a { background: var(--field-paper); border: 1px solid var(--field-line); border-radius: 12px; }
-.portal-index a { display: flex; justify-content: space-between; align-items: center; gap: 5px; padding: 10px 13px; }
-.portal-index strong, .portal-index div span { display: block; }
-.portal-index div span, .portal-pets a > span:last-child { color: var(--field-muted); font-size: 13px; }
-.portal-index a > span { color: var(--field-accent); }
-.portal-pets a { display: grid; justify-items: center; text-align: center; padding: 9px 5px; }
-.pet-art { display: grid; place-items: center; width: 68px; height: 68px; background: var(--field-tint); border-radius: 12px; margin-bottom: 4px; overflow: hidden; }
-.pet-art img { object-fit: contain; }
-.portal-credit { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--field-line); padding: 19px 0 27px; color: var(--field-muted); font-size: 13px; }
-.portal-credit a:hover { color: var(--field-accent); }
-@media (max-width: 1000px) {
-  .portal-shell { width: min(100% - 44px, 920px); }
-  .portal-hero { padding-top: 42px; }
-  .route-card { padding: 14px; gap: 9px; }
-  .route-arrow { display: none; }
+.route-glyph { display: grid; place-items: center; flex: 0 0 36px; height: 36px; color: var(--route-color); background: color-mix(in srgb, var(--route-color) 10%, var(--field-paper)); border-radius: 8px; font-family: var(--field-serif); font-size: 18px; font-weight: 800; }
+.route-copy { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.route-copy strong, .collection strong { color: var(--field-ink); font-size: 15px; line-height: 1.45; }
+.route-copy > span, .collection small { color: var(--field-muted); font-size: 13px; line-height: 1.6; }
+.route-arrow, .collection-arrow { color: var(--field-accent); }
+.collection-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 36px); }
+.collection h3 { margin: 0; padding: 7px 0; color: var(--field-accent); font-size: 14px; }
+.collection ul, .portal-pets { margin: 0; padding: 0; list-style: none; }
+.collection li { border-top: 1px solid var(--field-line); }
+.collection a { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 53px; padding: 6px 3px; }
+.collection a:hover strong { color: var(--field-accent); }
+.collection strong, .collection small { display: block; }
+.portal-pets { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.portal-pets a { display: grid; grid-template-areas: "art name" "art type"; grid-template-columns: minmax(0, 60px) minmax(0, 1fr); align-items: end; column-gap: 6px; min-height: 75px; padding: 5px 7px; background: var(--field-paper); border: 1px solid var(--field-line); border-radius: 9px; }
+.portal-pets a:hover { border-color: var(--field-accent); }
+.pet-art { grid-area: art; align-self: center; display: grid; place-items: center; height: 58px; overflow: hidden; }
+.pet-art img { width: 100%; height: 100%; object-fit: contain; border-radius: 7px; }
+.pet-art b { color: var(--field-accent); padding: 7px; font-family: var(--field-serif); font-size: 18px; border-radius: 7px; background: color-mix(in srgb, var(--pet-accent, var(--field-accent)) 12%, var(--field-paper)); }
+.portal-pets strong { grid-area: name; font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; }
+.portal-pets small { grid-area: type; align-self: start; color: var(--field-muted); font-size: 12px; }
+.portal-credit { display: flex; justify-content: space-between; gap: 14px 26px; padding: 20px 0 28px; color: var(--field-muted); font-size: 13px; line-height: 1.7; }
+.portal-credit p { margin: 0; }
+.portal-credit > a { flex: none; color: var(--field-accent); }
+.portal-credit p a { color: var(--field-accent); }
+.portal-credit a:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 950px) {
+  .portal-shell { width: calc(100% - 38px); }
+  .hero-copy h1 { font-size: clamp(43px, 7vw, 63px); }
+  .portal-pets { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-@media (max-width: 710px) {
-  .portal-shell { width: calc(100% - 32px); }
-  .portal-hero { grid-template-columns: 1fr; gap: 22px; padding: 32px 0 25px; }
-  .hero-copy h1 { font-size: clamp(52px, 13vw, 78px); margin-top: 12px; }
-  .hero-summary { margin-bottom: 17px; font-size: 16px; }
-  .portal-art img { max-height: 210px; }
-  .route-grid, .portal-bottom { grid-template-columns: 1fr; }
-  .portal-bottom { gap: 22px; }
-  .route-arrow { display: block; }
+@media (max-width: 680px) {
+  .portal-shell { width: calc(100% - 30px); }
+  .portal-hero { grid-template-columns: 1fr; gap: 15px; padding: 25px 0 15px; }
+  .hero-copy h1 { margin: 7px 0; }
+  .hero-summary { margin-bottom: 13px; }
+  .portal-art img { max-height: 150px; }
+  .portal-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 5px; margin-bottom: 20px; }
+  .portal-stats div:nth-child(4) { border-inline-start: 0; }
+  .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .route-card { padding: 9px 8px; gap: 6px; }
+  .route-glyph { flex-basis: 28px; height: 30px; font-size: 15px; }
+  .route-arrow { display: none; }
+  .route-copy strong { font-size: 14px; }
+  .collection-grid { grid-template-columns: 1fr; }
+  .portal-pets { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .portal-pets a { grid-template-columns: minmax(0, 48px) minmax(0, 1fr); min-height: 61px; padding: 3px 4px; }
+  .pet-art { height: 48px; }
+  .portal-credit { flex-wrap: wrap; }
+}
+@media (max-width: 354px) {
+  .route-grid { grid-template-columns: 1fr; }
+  .portal-pets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 </style>

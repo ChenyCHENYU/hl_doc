@@ -1,19 +1,30 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useData } from "vitepress";
 import codex from "../../data/pet-codex.json";
 import stats2026 from "../../data/pet-stats-2026.json";
 import library from "../../data/library.json";
+import { formatPetPriceYuan, readPetPrice } from "../../data/pet-price-format";
 import { evoImgUrl, EVO_ELEMENTS } from "../evolution";
 
+const props = defineProps<{ id?: string | number; inDialog?: boolean }>();
+const emit = defineEmits<{ select: [id: number] }>();
 const { params } = useData();
 const pet = computed(
-  () => (codex as any[]).find((p) => String(p.id) === String(params.value.id)) ?? null
+  () => (codex as any[]).find((p) => String(p.id) === String(props.id ?? params.value.id)) ?? null
 );
 
 const EL = EVO_ELEMENTS;
+const price = computed(() => pet.value?.price ?? null);
+const discount = computed(() => {
+  const value = readPetPrice(price.value?.discount);
+  return value != null && value <= 1
+    ? `${Number((value * 10).toFixed(2))} 折`
+    : price.value?.discount || "—";
+});
 
 const lineage = computed(() => {
+  if (!pet.value) return [];
   if (!pet.value?.evolveNormal && !isTarget(pet.value)) return [pet.value];
   const chain = [];
   let root = pet.value;
@@ -62,10 +73,15 @@ function tierLabel(i: number, len: number): string {
   return `${["一", "二", "三", "四"][i] ?? i + 1}级`;
 }
 
-function onImgError(e: Event) {
-  const el = e.target as HTMLElement;
-  el.closest(".pd-img")?.classList.add("img-failed");
-  el.remove();
+const failedImages = ref(new Set<number>());
+function displayImage(p: (typeof codex)[number]) {
+  return failedImages.value.has(p.id) ? null : evoImgUrl(p);
+}
+
+function selectChainPet(event: MouseEvent, id: number) {
+  if (!props.inDialog || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  emit("select", id);
 }
 
 const R = 50;
@@ -129,22 +145,22 @@ const radarLabels = computed(() =>
 </script>
 
 <template>
-  <div v-if="pet" class="pd">
-    <div class="pd-crumb">
+  <div v-if="pet" class="pd" :class="{ 'pd--dialog': inDialog }">
+    <div v-if="!inDialog" class="pd-crumb">
       <a href="/pets/">宠物图鉴</a><span>/</span>
       <a href="/pets/">{{ EL[pet.element]?.label }}系</a><span>/</span>
       <b>{{ pet.name }}</b>
     </div>
 
     <div class="pd-head">
-      <div class="pd-img" :style="{ '--el': EL[pet.element]?.color }">
-        <span class="pd-glyph">{{ EL[pet.element]?.label }}</span>
-        <img v-if="pet.image" :src="evoImgUrl(pet)" :alt="pet.name" @error="onImgError" />
+      <div class="pd-img" :style="{ '--el': EL[pet.element]?.color || 'var(--field-accent)' }">
+        <img v-if="displayImage(pet)" :key="pet.id" :src="displayImage(pet)!" :alt="pet.name" @error="failedImages.add(pet.id)" />
+        <span v-else class="pd-glyph" aria-hidden="true">{{ EL[pet.element]?.label || '宠' }}</span>
       </div>
       <div class="pd-main">
-        <h1 class="pd-name">{{ pet.name }}</h1>
+        <h1 v-if="!inDialog" class="pd-name">{{ pet.name }}</h1>
         <div class="pd-badges">
-          <span class="pd-badge" :style="{ color: EL[pet.element]?.color, borderColor: EL[pet.element]?.color }">{{ pet.sheet }}</span>
+          <span v-if="!inDialog" class="pd-badge">{{ pet.sheet }}</span>
           <span class="pd-badge type">{{ pet.type && !/^？+$/.test(pet.type) ? pet.type : "未知" }}</span>
         </div>
 
@@ -172,19 +188,28 @@ const radarLabels = computed(() =>
           </div>
         </div>
 
-        <div v-if="pet.price" class="pd-price">
-          <b>重塑特惠</b><span class="pd-price-num">{{ pet.price.special }}</span><span>灵石（原价 {{ pet.price.original }} · 折扣 {{ pet.price.discount }}）</span>
+        <div v-if="price" class="pd-price">
+          <div class="pd-price-stones">
+            <div><b>重塑特惠</b> <strong>{{ price.special || "—" }}</strong> 灵石</div>
+            <span>原价 {{ price.original || "—" }} 灵石 · {{ discount }}</span>
+          </div>
+          <div v-if="readPetPrice(price.charge50) != null || readPetPrice(price.charge10) != null" class="pd-price-reference">
+            <span>旧表人民币参考</span>
+            <span>50 元档 {{ formatPetPriceYuan(price.charge50) }}</span>
+            <span>10 元档 {{ formatPetPriceYuan(price.charge10) }}</span>
+            <a href="/pets/prices">看换算说明</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="pd-sec">
-      <h2>进化系谱</h2>
+      <component :is="inDialog ? 'h3' : 'h2'">进化系谱</component>
       <div class="pd-chain">
         <template v-for="(p, i) in lineage" :key="p.id">
-          <a :href="`/pets/${p.id}`" class="pd-chain-node" :class="{ me: p.id === pet.id }">
-            <img v-if="p.image" :src="evoImgUrl(p)!" alt="" />
-            <span v-else class="pd-chain-glyph">{{ EL[p.element]?.label }}</span>
+          <a :href="`/pets/${p.id}`" class="pd-chain-node" :class="{ me: p.id === pet.id, 'vp-raw': inDialog }" :aria-current="p.id === pet.id ? 'true' : undefined" @click="selectChainPet($event, p.id)">
+            <img v-if="displayImage(p)" :src="displayImage(p)!" alt="" loading="lazy" @error="failedImages.add(p.id)" />
+            <span v-else class="pd-chain-glyph">{{ EL[p.element]?.label || '宠' }}</span>
             <i>{{ p.name }}</i>
             <em>{{ tierLabel(i, lineage.length) }}</em>
           </a>
@@ -196,7 +221,7 @@ const radarLabels = computed(() =>
     </div>
 
     <div class="pd-sec">
-      <h2>详细资料</h2>
+      <component :is="inDialog ? 'h3' : 'h2'">详细资料</component>
       <div class="pd-rows">
         <div class="pd-row"><span>抓取出处</span><p>{{ pet.source || "暂无可靠出处" }}</p></div>
         <div v-if="pet.note" class="pd-row"><span>备注</span><p>{{ pet.note }}</p></div>
@@ -204,7 +229,7 @@ const radarLabels = computed(() =>
     </div>
 
     <div v-if="related.length" class="pd-sec">
-      <h2>出现在这些攻略里</h2>
+      <component :is="inDialog ? 'h3' : 'h2'">出现在这些攻略里</component>
       <div class="pd-related">
         <a v-for="r in related" :key="r.slug" :href="`/guide/library/${r.slug}`" class="pd-rel-card">
           <b>{{ r.title }}</b><span>{{ r.cat }}</span>
@@ -220,6 +245,12 @@ const radarLabels = computed(() =>
 <style scoped>
 .pd {
   margin: 18px 0 32px;
+}
+
+.pd--dialog {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .pd-crumb {
@@ -241,10 +272,14 @@ const radarLabels = computed(() =>
 
 .pd-head {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: minmax(150px, 225px) minmax(0, 1fr);
+  align-items: start;
   gap: 24px;
   margin-bottom: 28px;
 }
+
+.pd--dialog .pd-head { grid-template-columns: minmax(110px, 156px) minmax(0, 1fr); gap: 16px; margin-bottom: 14px; }
+.pd--dialog .pd-badges { margin-bottom: 8px; }
 
 .pd-img {
   position: relative;
@@ -255,7 +290,6 @@ const radarLabels = computed(() =>
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 18px 44px -16px color-mix(in srgb, var(--el) 45%, transparent);
   overflow: hidden;
 }
 
@@ -272,15 +306,9 @@ const radarLabels = computed(() =>
 }
 
 .pd-glyph {
-  display: none;
   font-size: 80px;
   font-weight: 800;
   color: color-mix(in srgb, var(--el) 60%, var(--vp-c-text-3));
-}
-
-.pd-img.img-failed .pd-glyph,
-.pd-img:not(:has(img)) .pd-glyph {
-  display: block;
 }
 
 .pd-name {
@@ -292,6 +320,7 @@ const radarLabels = computed(() =>
 
 .pd-badges {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 18px;
 }
@@ -302,6 +331,8 @@ const radarLabels = computed(() =>
   border: 1px solid;
   border-radius: 999px;
   padding: 2px 12px;
+  color: var(--field-accent);
+  border-color: var(--field-line);
 }
 
 .pd-badge.type {
@@ -310,9 +341,9 @@ const radarLabels = computed(() =>
 }
 
 .pd-2026 {
-  border: 1px solid var(--vp-c-divider);
+  border: 1px solid var(--field-line);
   border-radius: 12px;
-  background: var(--vp-c-bg-soft);
+  background: var(--field-paper);
   padding: 14px 16px;
   margin-bottom: 14px;
 }
@@ -320,8 +351,7 @@ const radarLabels = computed(() =>
 .pd-2026-title {
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--vp-c-text-3);
+  color: var(--field-muted);
   margin-bottom: 10px;
 }
 
@@ -339,7 +369,7 @@ const radarLabels = computed(() =>
 
 .pd-radar-ring {
   fill: none;
-  stroke: var(--vp-c-divider);
+  stroke: var(--field-line);
 }
 
 .pd-radar-label {
@@ -352,34 +382,19 @@ const radarLabels = computed(() =>
 
 .pd-radar-grid {
   fill: none;
-  stroke: var(--vp-c-divider);
+  stroke: var(--field-line);
   stroke-dasharray: 3 3;
 }
 
 .pd-radar-fill {
-  fill: rgba(184, 134, 11, 0.25);
-  stroke: var(--vp-c-brand-1);
+  fill: color-mix(in srgb, var(--field-accent) 20%, transparent);
+  stroke: var(--field-accent);
   stroke-width: 1.5;
-  transform-origin: 66px 66px;
-  animation: hl-radar-in 0.7s cubic-bezier(0.34, 1.4, 0.44, 1) both;
-}
-
-.pd-radar-label {
-  animation: hl-fade-up 0.5s ease both;
-}
-
-.pd-radar-label:nth-of-type(1) { animation-delay: 0.25s; }
-.pd-radar-label:nth-of-type(2) { animation-delay: 0.32s; }
-.pd-radar-label:nth-of-type(3) { animation-delay: 0.39s; }
-.pd-radar-label:nth-of-type(4) { animation-delay: 0.46s; }
-.pd-radar-label:nth-of-type(5) { animation-delay: 0.53s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .pd-radar-fill, .pd-radar-label { animation: none; }
 }
 
 .pd-2026-rows {
   display: grid;
+  min-width: 0;
   gap: 6px;
   font-size: 13px;
 }
@@ -390,40 +405,48 @@ const radarLabels = computed(() =>
 }
 
 .pd-2026-rows b {
-  color: var(--vp-c-text-3);
+  color: var(--field-muted);
   width: 4.5em;
   flex-shrink: 0;
 }
 
 .pd-2026-rows span {
-  color: var(--vp-c-text-2);
+  color: var(--field-ink);
+  overflow-wrap: anywhere;
   font-variant-numeric: tabular-nums;
 }
 
 .pd-price {
+  border: 1px solid var(--field-line);
+  background: var(--field-tint);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: var(--field-muted);
+}
+
+.pd-price-stones, .pd-price-reference {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  border: 1px solid var(--vp-c-brand-soft);
-  background: var(--vp-c-brand-soft);
-  border-radius: 10px;
-  padding: 10px 16px;
-  font-size: 13px;
-  color: var(--vp-c-text-2);
+  flex-wrap: wrap;
+  gap: 0 10px;
 }
 
-.pd-price b {
-  color: var(--vp-c-brand-1);
-}
-
-.pd-price-num {
+.pd-price-stones b, .pd-price-stones strong, .pd-price-reference a { color: var(--field-accent); }
+.pd-price-stones strong {
   font-size: 20px;
   font-weight: 800;
-  color: var(--vp-c-brand-1);
   font-variant-numeric: tabular-nums;
 }
 
-.pd-sec h2 {
+.pd-price-reference {
+  margin-top: 4px;
+  border-top: 1px solid var(--field-line);
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pd-sec :is(h2,h3) {
   font-size: 18px;
   font-weight: 700;
   color: var(--vp-c-text-1);
@@ -527,7 +550,7 @@ const radarLabels = computed(() =>
 
 .pd-row {
   display: grid;
-  grid-template-columns: 5em 1fr;
+  grid-template-columns: 5em minmax(0, 1fr);
   gap: 10px;
   font-size: 14px;
   line-height: 1.8;
@@ -541,11 +564,12 @@ const radarLabels = computed(() =>
 .pd-row p {
   margin: 0;
   color: var(--vp-c-text-2);
+  overflow-wrap: anywhere;
 }
 
 .pd-related {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   gap: 10px;
 }
 
@@ -567,9 +591,7 @@ const radarLabels = computed(() =>
   display: block;
   font-size: 13px;
   color: var(--vp-c-text-1);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .pd-rel-card span {
@@ -582,15 +604,26 @@ const radarLabels = computed(() =>
     grid-template-columns: 1fr;
   }
 
-  .pd-img {
-    max-width: 240px;
-  }
+  .pd-img { max-width: 180px; }
 
-  /* 雷达 + 属性行竖排，避免 132px 雷达把属性行挤出视口 */
-  .pd-2026-body {
-    flex-direction: column;
-    align-items: flex-start;
+  .pd-2026-body { flex-wrap: wrap; gap: 10px; }
+  .pd-radar { width: 100px; height: 100px; }
+}
+
+@media (max-width: 600px) {
+  .pd--dialog .pd-head {
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 8px;
   }
+  .pd--dialog .pd-main { display: contents; }
+  .pd--dialog .pd-img { max-width: none; }
+  .pd--dialog .pd-img img { padding: 5px; }
+  .pd--dialog .pd-glyph { font-size: 40px; }
+  .pd--dialog .pd-badges { margin: 0; align-self: center; }
+  .pd--dialog .pd-2026, .pd--dialog .pd-price { grid-column: 1 / -1; margin: 0; }
+  .pd--dialog .pd-2026-body:has(.pd-radar) { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 7px; align-items: center; }
+  .pd--dialog .pd-radar { width: 86px; height: 86px; }
+  .pd--dialog .pd-2026-rows div { gap: 5px; }
 }
 
 /* 网格 1fr 列默认 min-width:auto，长名字/徽章会把 .pd-main 顶出容器（移动端 4px 溢出） */

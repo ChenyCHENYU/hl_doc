@@ -85,6 +85,14 @@ export default defineConfig({
   ],
   sitemap: process.env.DEPLOY_URL ? { hostname: process.env.DEPLOY_URL } : undefined,
   ignoreDeadLinks: [/^\/pets\/\d+$/],
+  markdown: {
+    config(md) {
+      md.renderer.rules.table_open = (tokens, index, options, _env, renderer) => {
+        tokens[index].attrJoin("class", "wiki-text-table");
+        return renderer.renderToken(tokens, index, options);
+      };
+    },
+  },
   vite: {
     plugins: [hlLocalAssets()],
     // 允许 TWIKOO_ENV_ID 等业务变量进入客户端（默认仅 VITE_ 前缀）
@@ -111,6 +119,7 @@ export default defineConfig({
       ] },
       { text: "查资料", link: "/search/" },
       { text: "更多", items: [
+        { text: "全部栏目", link: "/guide/catalog" },
         { text: "玩家文库", link: "/guide/library/" }, { text: "资源与画廊", link: "/resources/" },
         { text: "英雄墙", link: "/heroes/" }, { text: "历史陈列馆", link: "/museum/" },
         { text: "关于本站", link: "/about/" },
@@ -118,7 +127,7 @@ export default defineConfig({
     ],
     sidebar: {
       "/guide/": [
-        { text: "总览", items: [{ text: "分类总览", link: "/guide/" }] },
+        { text: "总览", items: [{ text: "分类总览", link: "/guide/" }, { text: "全部栏目", link: "/guide/catalog" }] },
         ...helpSidebarGroups,
         { text: "玩家文库", collapsed: false, items: [{ text: "文库总览", link: "/guide/library/" }] },
         ...librarySidebar,

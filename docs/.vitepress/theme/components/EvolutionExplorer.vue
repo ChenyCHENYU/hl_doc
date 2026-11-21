@@ -2,11 +2,13 @@
 import { computed, ref } from "vue";
 import codex from "../../data/pet-codex.json";
 import { computeLineages, evoImgUrl, EVO_ELEMENTS, type EvoPet, type Lineage } from "../evolution";
+import PetQuickView from "./PetQuickView.vue";
 
 const all = computeLineages(codex as EvoPet[]);
 const TABS = ["全部", "金", "木", "水", "火", "土"];
 const active = ref("全部");
 const keyword = ref("");
+const quickView = ref<InstanceType<typeof PetQuickView> | null>(null);
 
 const shown = computed<Lineage[]>(() => {
   let list = all;
@@ -20,6 +22,7 @@ const shown = computed<Lineage[]>(() => {
   }
   return list;
 });
+const shownPetIds = computed(() => Array.from(new Set(shown.value.flatMap((lineage) => lineage.chain.map((pet) => pet.id)))));
 
 const petCount = new Set(all.flatMap((l) => l.chain.map((p) => p.name))).size;
 
@@ -43,24 +46,26 @@ function tier(i: number, len: number): string {
           v-for="t in TABS"
           :key="t"
           class="pc-tab"
+          type="button"
+          :aria-pressed="active === t"
           :class="{ active: active === t }"
           @click="active = t"
         >
           {{ t }}
         </button>
       </div>
-      <input v-model="keyword" class="item-search pc-search" type="search" placeholder="按宠物名搜系谱（如：狼 / 晶刚）" />
+      <input v-model="keyword" class="item-search pc-search" type="search" placeholder="按宠物名搜系谱（如：狼 / 晶刚）" aria-label="按宠物名筛选系谱" />
     </div>
 
     <p class="item-count">
-      {{ all.length }} 条真实进化系谱 · 覆盖 {{ petCount }} 只宠物 · 当前显示 {{ shown.length }} 条（由图鉴 evolveNormal 字段推导）
+      {{ all.length }} 条进化系谱 · 覆盖 {{ petCount }} 只宠物 · 当前显示 {{ shown.length }} 条
     </p>
 
     <div v-for="(l, li) in shown" :key="li" class="ex-lineage" :style="{ '--el': EVO_ELEMENTS[l.element]?.color }">
       <span class="ex-badge">{{ EVO_ELEMENTS[l.element]?.label }}系</span>
       <div class="ex-chain">
         <template v-for="(p, i) in l.chain" :key="p.name + i">
-          <a href="/pets/" class="ex-node" :class="{ final: i === l.chain.length - 1 }">
+          <a :href="`/pets/${p.id}`" aria-haspopup="dialog" class="ex-node vp-raw" :class="{ final: i === l.chain.length - 1 }" @click="quickView?.openFromLink($event, p.id)">
             <div class="ex-node-img" :class="{ 'no-img': !p.image }">
               <span class="ex-glyph">{{ EVO_ELEMENTS[p.element]?.label }}</span>
               <img v-if="p.image" :src="evoImgUrl(p) || ''" :alt="p.name" loading="lazy" @error="onImgError" />
@@ -79,6 +84,7 @@ function tier(i: number, len: number): string {
     </div>
 
     <p v-if="!shown.length" class="item-count">没有匹配的系谱，换个关键词试试。</p>
+    <PetQuickView ref="quickView" :pet-ids="shownPetIds" />
   </div>
 </template>
 

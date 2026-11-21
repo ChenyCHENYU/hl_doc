@@ -1,157 +1,75 @@
-/* 覆盖 VitePress 默认样式 */
+/* Theme tokens shared by VitePress chrome. Embedded components own their layout. */
 :root {
-  --vp-c-brand-1: #b8860b;
-  --vp-c-brand-2: #d4af37;
-  --vp-c-brand-3: #9a7410;
-  /* 设为 100vw → VPContent 在 ≥1440px 时 padding 居中计算结果为 0，
-     整个视口宽度可用（减去 sidebar），内容区撑满 */
   --vp-layout-max-width: 100vw;
   --vp-font-family-base: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+  --vp-c-brand-1: var(--field-accent);
+  --vp-c-brand-2: var(--field-accent);
+  --vp-c-brand-3: var(--field-accent);
+  --vp-c-brand-soft: color-mix(in srgb, var(--field-accent) 12%, transparent);
+  --vp-button-brand-bg: var(--field-action);
+  --vp-button-brand-hover-bg: var(--field-action);
+  --vp-button-brand-text: var(--field-action-text);
+  --vp-button-brand-hover-text: var(--field-action-text);
 }
 
-/* 优化暗色模式 — Linear 风格深色底色 */
-.dark {
-  --vp-c-bg: #09090b;
-  --vp-c-bg-soft: #111113;
-  --vp-c-bg-mute: #18181b;
-  --vp-c-bg-alt: #0d0d0f;
+.wiki-frame {
+  --vp-c-bg: var(--field-paper);
+  --vp-c-bg-soft: var(--field-bg);
+  --vp-c-bg-alt: var(--field-bg);
+  --vp-c-bg-mute: var(--field-tint);
+  --vp-c-divider: var(--field-line);
+  --wiki-column: 1040px;
 }
-
-/* 页面标题与内容呼吸间距（h1 不再贴住下方卡片） */
-.vp-doc h1 {
-  margin-bottom: 0.4em;
-  padding-bottom: 14px;
-  background-image: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-2), transparent 70%);
-  background-size: 72px 2px;
-  background-repeat: no-repeat;
-  background-position: 0 bottom;
+.wiki-frame[data-content-mode="reading"] { --wiki-column: 800px; }
+.wiki-frame[data-content-mode="wide"] { --wiki-column: 1220px; }
+.wiki-frame .VPDoc > .container { max-width: 1500px; }
+.wiki-frame .VPDoc > .container > .content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
 }
-
-.vp-doc h1 + .th-wrap,
-.vp-doc h1 + p {
-  margin-top: 22px;
-}
-
-.th-wrap {
-  margin: 22px 0 26px;
-}
-
-/* 平滑滚动 */
-html {
-  scroll-behavior: smooth;
-}
-
-/* 内容区域加宽 — 无 sidebar 页面（首页等）保持合理宽度 */
-.VPDoc:not(.has-sidebar) .container {
-  max-width: 1104px !important;
-}
-.VPDoc:not(.has-sidebar) .content {
-  max-width: 868px !important;
-}
-
-/* ================================================================
-   宽内容布局 — 仅桌面端 ≥960px 生效（有左 sidebar 的页面）
-   sidebar 贴左、TOC 贴右、中间内容撑满，移动端/平板端完全不受影响。
-   VitePress 默认 .VPDoc .container 是 justify-content:center +
-   .content-container 限宽 43rem，这里整组覆盖。
-   ================================================================ */
-
-@media (min-width: 960px) {
-  .VPDoc.has-sidebar .container {
-    justify-content: flex-start !important;
-    max-width: none !important;
-  }
-
-  .VPDoc.has-sidebar .content {
-    flex: 1 1 0% !important;
-    min-width: 0;
-  }
-
-  .VPDoc.has-sidebar .content-container {
-    max-width: none !important;
-    margin: 0 !important;
-  }
-
-  .VPDoc.has-sidebar .main {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding-inline: clamp(24px, 4vw, 96px);
-    box-sizing: border-box;
-  }
-
-  .VPDoc.has-sidebar .vp-doc table {
-    display: table;
-    width: 100%;
-  }
-
-  .VPDoc.has-sidebar .vp-doc th,
-  .VPDoc.has-sidebar .vp-doc td {
-    overflow-wrap: break-word;
-  }
-}
-
-/* ================================================================
-   Glassmorphism Nav — 导航栏毛玻璃效果
-   ================================================================ */
-.VPNav {
-  backdrop-filter: saturate(180%) blur(20px) !important;
-  -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
-}
-.VPNavBar {
-  background-color: rgba(255, 255, 255, 0.72) !important;
-}
-
-.VPNavBar .content-body {
-  background-color: transparent !important;
-}
-
-.dark .VPNavBar {
-  background-color: rgba(9, 9, 11, 0.68) !important;
-}
-
-.dark .VPNavBar .content-body {
-  background-color: transparent !important;
-}
-
-/* ================================================================
-   Glow Typography — 暗色模式标题辉光
-   ================================================================ */
-.dark .vp-doc h1 {
-  text-shadow: 0 0 80px rgba(184, 134, 11, 0.45), 0 0 30px rgba(212, 175, 55, 0.25);
-}
-.dark .vp-doc h2 {
-  text-shadow: 0 0 50px rgba(184, 134, 11, 0.3), 0 0 20px rgba(212, 175, 55, 0.15);
-}
-
-/* ================================================================
-   Gradient Divider — 章节渐变分割线
-   ================================================================ */
-.vp-doc h2 {
-  border-bottom: none !important;
-  padding-bottom: 12px;
-  position: relative;
-}
-.vp-doc h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.wiki-frame .VPDoc > .container > .content > .content-container {
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,
-    var(--vp-c-brand-1),
-      var(--vp-c-brand-2),
-    transparent 80%);
-  opacity: 0.7;
+  max-width: var(--wiki-column);
+  margin-inline: auto;
 }
-.dark .vp-doc h2::after {
-  opacity: 0.5;
+.wiki-frame .VPDoc .main { min-width: 0; }
+.dark .wiki-frame .VPNavBarTitle .logo { filter: invert(1); }
+.wiki-frame .vp-doc > div > h1 {
+  margin: 0 0 14px;
+  font-family: var(--field-serif);
+  font-size: clamp(29px, 4.6vw, 45px);
+  line-height: 1.23;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
 }
-
-* {
-  box-sizing: border-box;
+.wiki-frame .vp-doc > div > h2 {
+  margin-top: 34px;
+  padding-top: 17px;
+  border-top: 1px solid var(--field-line);
+  font-family: var(--field-serif);
 }
+.wiki-frame .vp-doc > div > :is(p, ul, ol, blockquote) {
+  max-width: 76ch;
+  overflow-wrap: anywhere;
+}
+.wiki-frame[data-content-mode="reading"] .vp-doc > div > :is(p, ul, ol, blockquote) {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.wiki-frame .vp-doc > div > p:first-of-type { color: var(--field-muted); }
+.wiki-frame .vp-doc > div > blockquote {
+  border-left: 3px solid var(--field-line);
+  padding: 1px 0 1px 13px;
+}
+.wiki-frame .vp-doc > div > .th-wrap { margin: 16px 0 22px; }
+.wiki-frame .vp-doc > div > :is(p, blockquote, li) img { height: auto; }
+.wiki-frame .vp-doc .wiki-text-table {
+  max-width: 100%;
+  overscroll-behavior-inline: contain;
+}
+.wiki-frame .vp-doc .wiki-text-table th { white-space: nowrap; }
+.wiki-frame .vp-doc .wiki-text-table td { vertical-align: top; overflow-wrap: anywhere; }
 
 /* ================================================================
    Premium Selection — 品牌色文字选中高亮
@@ -242,117 +160,6 @@ html {
 }
 
 /* ================================================================
-   Code Block — 代码块渐变左边框 + 微妙阴影
-   ================================================================ */
-.vp-doc div[class*='language-'] {
-  border-left: 2px solid transparent !important;
-  border-image: linear-gradient(180deg, var(--vp-c-brand-1), var(--vp-c-brand-2)) 1 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
-  transition: box-shadow 0.25s ease !important;
-}
-.vp-doc div[class*='language-']:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10) !important;
-}
-.dark .vp-doc div[class*='language-'] {
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3) !important;
-}
-.dark .vp-doc div[class*='language-']:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* ================================================================
-   Blockquote — 引用框渐变左边框
-   ================================================================ */
-.vp-doc blockquote {
-  border-left: 2px solid transparent !important;
-  border-image: linear-gradient(180deg, var(--vp-c-brand-1), var(--vp-c-brand-2)) 1 !important;
-}
-
-/* ================================================================
-   Link Hover — 文档内链接悬停发光
-   ================================================================ */
-.vp-doc a {
-  transition: color 0.2s ease, text-shadow 0.2s ease !important;
-}
-.vp-doc a:hover {
-  text-shadow: 0 0 12px rgba(184, 134, 11, 0.3) !important;
-}
-.dark .vp-doc a:hover {
-  text-shadow: 0 0 12px rgba(240, 201, 78, 0.45) !important;
-}
-
-/* ================================================================
-   Nav Shadow — 亮色模式导航栏底部微妙投影
-   ================================================================ */
-.VPNavBar .divider-line {
-  background: transparent !important;
-  box-shadow: 0 1px 8px rgba(184, 134, 11, 0.08) !important;
-  height: 1px !important;
-}
-.dark .VPNavBar .divider-line {
-  box-shadow: 0 1px 12px rgba(240, 201, 78, 0.12) !important;
-}
-
-/* ================================================================
-   Table — 表格始终约束在正文区域内
-   ================================================================ */
-.vp-doc table {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  table-layout: auto !important;
-  overflow-x: auto !important;
-  overscroll-behavior-inline: contain;
-  -webkit-overflow-scrolling: touch;
-}
-
-.vp-doc table th,
-.vp-doc table td {
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: normal;
-  vertical-align: middle;
-}
-
-.vp-doc table th,
-.vp-doc table .is-compact-column {
-  white-space: nowrap;
-}
-
-.vp-doc table .is-compact-column {
-  width: 1%;
-  overflow-wrap: normal;
-}
-
-.vp-doc table .is-compact-column code {
-  white-space: nowrap;
-}
-
-.vp-doc table th {
-  background: linear-gradient(
-    180deg,
-    rgba(184, 134, 11, 0.04) 0%,
-    rgba(184, 134, 11, 0.01) 100%
-  ) !important;
-}
-.dark .vp-doc table th {
-  background: linear-gradient(
-    180deg,
-    rgba(240, 201, 78, 0.08) 0%,
-    rgba(240, 201, 78, 0.02) 100%
-  ) !important;
-}
-.vp-doc table tr {
-  transition: background-color 0.15s ease !important;
-}
-.vp-doc table tr:hover {
-  background-color: rgba(184, 134, 11, 0.03) !important;
-}
-.dark .vp-doc table tr:hover {
-  background-color: rgba(240, 201, 78, 0.06) !important;
-}
-
-/* ================================================================
    Sidebar Hover — 侧边栏项悬停微交互
    ================================================================ */
 .VPSidebarItem .item {
@@ -383,7 +190,7 @@ html {
    ================================================================ */
 .topic-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 12px;
   margin: 12px 0 24px;
 }
@@ -676,208 +483,7 @@ html {
   box-shadow: 0 2px 8px rgba(184, 134, 11, 0.35);
 }
 
-.pc-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-}
-
-.pc-modal {
-  position: relative;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 0;
-  width: min(760px, 100%);
-  max-height: 86vh;
-  overflow: auto;
-  border-radius: 18px;
-  border: 1.5px solid color-mix(in srgb, var(--el) 50%, transparent);
-  background: var(--vp-c-bg);
-  box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.5), 0 0 80px -20px color-mix(in srgb, var(--el) 50%, transparent);
-}
-
-.pc-modal-img {
-  position: relative;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-}
-
-.dark .pc-modal-img {
-  background: #f7f5f0;
-}
-
-.pc-modal-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 22px;
-  image-rendering: pixelated;
-}
-
-.pc-modal-img .pc-el-glyph {
-  font-size: 90px;
-}
-
-.pc-modal-body {
-  padding: 26px 26px 24px;
-  min-width: 0;
-}
-
-.pc-modal-name {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--vp-c-text-1);
-  margin-bottom: 16px;
-}
-
-.pc-el-chip {
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid;
-  border-radius: 999px;
-  padding: 2px 12px;
-}
-
-.pc-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.pc-row {
-  display: flex;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--vp-c-text-2);
-}
-
-.pc-row-k {
-  flex-shrink: 0;
-  font-weight: 700;
-  color: var(--vp-c-brand-1);
-  width: 4.5em;
-}
-
-.pc-price-box {
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  background: var(--vp-c-bg-soft);
-  padding: 14px 16px;
-}
-
-.pc-price-title {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--vp-c-text-3);
-  margin-bottom: 10px;
-}
-
-.pc-price-cells {
-  display: flex;
-}
-
-.pc-price-cell {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  position: relative;
-}
-
-.pc-price-cell:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 15%;
-  height: 70%;
-  width: 1px;
-  background: var(--vp-c-divider);
-}
-
-.pc-price-cell b {
-  font-size: 17px;
-  color: var(--vp-c-text-1);
-  font-variant-numeric: tabular-nums;
-}
-
-.pc-price-cell.hot b {
-  color: var(--vp-c-brand-1);
-}
-
-.pc-price-cell span {
-  font-size: 12px;
-  color: var(--vp-c-text-2);
-}
-
-.pc-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 5;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-2);
-  font-size: 17px;
-  line-height: 1;
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s, transform 0.15s;
-}
-
-.pc-close:hover {
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-  transform: rotate(90deg);
-}
-
-.pc-modal-enter-active,
-.pc-modal-leave-active {
-  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.pc-modal-enter-active .pc-modal,
-.pc-modal-leave-active .pc-modal {
-  transition: transform 0.25s cubic-bezier(0.34, 1.4, 0.64, 1);
-}
-
-.pc-modal-enter-from,
-.pc-modal-leave-to {
-  opacity: 0;
-}
-
-.pc-modal-enter-from .pc-modal,
-.pc-modal-leave-to .pc-modal {
-  transform: scale(0.94) translateY(12px);
-}
-
 @media (max-width: 760px) {
-  .pc-modal {
-    grid-template-columns: 1fr;
-  }
-
-  .pc-modal-img {
-    min-height: 220px;
-  }
-
   .pc-toolbar {
     flex-direction: column;
     align-items: stretch;
@@ -893,7 +499,7 @@ html {
    ================================================================ */
 .adv-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 14px;
   margin: 20px 0 24px;
 }
@@ -959,7 +565,7 @@ html {
    ================================================================ */
 .monster-status {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 14px;
   margin: 20px 0 24px;
 }
@@ -1214,15 +820,6 @@ html {
 .asc-nav a:hover {
   border-color: var(--vp-c-brand-1);
   transform: translateY(-1px);
-}
-
-/* 文章页正文阅读列宽：段落/列表限宽，表格/组件/网格不受限 */
-/* 段落均在包装容器内（无直接子级 p），改为后代选择器；表格/网格宽度不受影响 */
-body.hc-article .vp-doc p,
-body.hc-article .vp-doc ul,
-body.hc-article .vp-doc ol,
-body.hc-article .vp-doc blockquote {
-  max-width: 760px;
 }
 
 /* ================================================================

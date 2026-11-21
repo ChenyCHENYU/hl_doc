@@ -39,9 +39,13 @@
   background: var(--field-paper);
   color: var(--field-muted);
 }
-.field-search:focus-within { border-color: var(--field-accent); }
+.field-search:focus-within {
+  border-color: var(--field-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--field-accent) 30%, transparent);
+}
 .field-search svg { flex: none; }
 .field-search input { flex: 1; min-width: 0; padding: 6px 3px; color: var(--field-ink); font-size: 16px; min-height: 44px; }
+.field-search input:focus-visible { outline: none; }
 .field-search input::placeholder { color: var(--field-muted); opacity: 1; }
 .field-search button {
   flex: none;
@@ -54,6 +58,7 @@
   font-weight: 700;
 }
 .field-search button:hover { opacity: .88; }
+.field-search button:focus-visible { outline-offset: -3px; outline-color: var(--field-action-text); }
 .field-reading {
   color: var(--field-ink);
   max-width: 840px;
@@ -62,3 +67,7 @@
   line-height: 1.75;
 }
 .field-reading h2 { font-family: var(--field-serif); font-weight: 800; }
+.lookup-scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+.lookup-scroll:focus-visible { outline: 2px solid var(--field-accent); outline-offset: 2px; }
+.wiki-frame .vp-doc .lookup-scroll > table { display: table; width: 100%; margin: 0; }
+.lookup-scroll th { white-space: nowrap; }

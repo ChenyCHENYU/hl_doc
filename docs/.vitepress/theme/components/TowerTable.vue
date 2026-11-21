@@ -80,6 +80,7 @@ const atkLine = computed(() => line((r) => Number(r.maxAtk) || 0, scale));
       <input v-model="keyword" class="item-search pc-search" type="search" placeholder="如：10 / 厚皮鳄 / 火" aria-label="筛选天关关数、怪物或属性" />
     </div>
 
+    <div class="lookup-scroll" role="region" aria-label="天关防御表" tabindex="0">
     <table>
       <thead>
         <tr>
@@ -114,6 +115,7 @@ const atkLine = computed(() => line((r) => Number(r.maxAtk) || 0, scale));
         </tr>
       </tbody>
     </table>
+    </div>
 
     <p v-if="filtered.length > limit" class="item-count">
       <a @click.prevent="limit += 40" href="#">加载更多（还剩 {{ filtered.length - limit }} 关）</a>
